@@ -27,6 +27,11 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
         <entry key="$PROJECT_DIR$" value="feature/add_main_screen_ui" />
       </map>
     </option>
