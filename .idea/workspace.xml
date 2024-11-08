@@ -32,7 +32,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/add_main_screen_ui" />
+        <entry key="$PROJECT_DIR$" value="feature/add_bloc" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -59,9 +59,9 @@
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "feature/add__bloc",
+    "git-widget-placeholder": "feature/add__modular",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "/Users/user/StudioProjects/flutter_project/assets/images",
+    "last_opened_file_path": "/Users/user/StudioProjects/flutter_project/lib/chat/modular/app/features/feed/screens",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -71,18 +71,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/chat/modular/app/features/feed/screens" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/screens" />
       <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/lib/chat/widgets/details" />
       <recent name="$PROJECT_DIR$/lib/chat/widgets/custom_split_view" />
-      <recent name="$PROJECT_DIR$/lib/chat/widgets/tabbar" />
-      <recent name="$PROJECT_DIR$/lib/chat/widgets" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/chat/modular/app" />
       <recent name="$PROJECT_DIR$/lib/chat/widgets/tabbar" />
       <recent name="$PROJECT_DIR$/lib/chat/widgets/avatars" />
       <recent name="$PROJECT_DIR$/lib/chat/widgets/details" />
       <recent name="$PROJECT_DIR$/lib/chat/widgets" />
-      <recent name="$PROJECT_DIR$/lib/chat/autoroute/screens" />
     </key>
   </component>
   <component name="RunManager">
@@ -132,7 +132,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731080435635</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Bloc.">
+      <option name="closed" value="true" />
+      <created>1731087014689</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1731087014689</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Bloc.">
+      <option name="closed" value="true" />
+      <created>1731087166752</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1731087166752</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -149,6 +165,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First commit." />
     <MESSAGE value="UI + autorouter." />
-    <option name="LAST_COMMIT_MESSAGE" value="UI + autorouter." />
+    <MESSAGE value="Bloc." />
+    <option name="LAST_COMMIT_MESSAGE" value="Bloc." />
   </component>
 </project>
