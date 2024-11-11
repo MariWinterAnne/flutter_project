@@ -43,7 +43,9 @@ class _SubtitleTextState extends State<SubtitleText> {
       maxLines: 2,
       overflow: TextOverflow.ellipsis,
       style: TextStyle(
-          fontSize: 12, color: widget.subtitleTextColor ?? Colors.grey),
+        fontSize: 12,
+        color: widget.subtitleTextColor ?? Colors.grey,
+      ),
     );
   }
 }

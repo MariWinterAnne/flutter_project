@@ -21,7 +21,7 @@ import 'package:flutter_project/chat/autoroute/screens/profile_screen.dart'
 import 'package:flutter_project/chat/autoroute/screens/root_screen.dart' as _i5;
 import 'package:flutter_project/chat/autoroute/screens/settings_screen.dart'
     as _i6;
-import 'package:flutter_project/chat/domain/models/chat_data_list_model.dart'
+import 'package:flutter_project/chat/modular/features/chat/domain/models/chat_data_list_model.dart'
     as _i9;
 
 /// generated route for

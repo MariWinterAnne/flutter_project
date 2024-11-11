@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_split_view/flutter_split_view.dart';
-import '../../autoroute/screens/details_screen.dart';
-import '../../domain/models/chat_data_list_model.dart';
-import '../../theme/colors.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import '../../../../../../theme/colors.dart';
+import '../../../domain/models/chat_data_list_model.dart';
 import '../list_item.dart';
 
 //TODO: все фильтры на domain-слое
@@ -17,7 +16,7 @@ class ChatsEvenElementsListView extends StatefulWidget {
 }
 
 class ChatsEvenElementsListViewState extends State<ChatsEvenElementsListView> {
-  int selectedIndex = -1;
+  int _selectedIndex = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,7 @@ class ChatsEvenElementsListViewState extends State<ChatsEvenElementsListView> {
         evenList.add(
           GestureDetector(
             child: Container(
-              color: index == selectedIndex
+              color: index == _selectedIndex
                   ? AppColors.elementsColor
                   : AppColors.darkThemeColor,
               child: ChatListItem(
@@ -41,14 +40,15 @@ class ChatsEvenElementsListViewState extends State<ChatsEvenElementsListView> {
             onTap: () {
               setState(
                 () {
-                  selectedIndex = index;
+                  _selectedIndex = index;
                 },
               );
-              SplitView.of(context).popUntil(0);
-              SplitView.of(context).push(
-                DetailsScreen(
-                    chatElement: widget.chatDataList[selectedIndex]),
-              );
+              Modular.to.navigate('/details/${widget.chatDataList[index].id}');
+              /*SplitView.of(context).popUntil(0);
+            SplitView.of(context).push(
+              DetailsScreen(
+                  chatElement: widget.chatDataList[selectedIndex]),
+            );*/
             },
           ),
         );

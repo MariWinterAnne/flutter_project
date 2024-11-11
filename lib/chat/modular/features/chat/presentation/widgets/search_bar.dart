@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../theme/colors.dart';
+import '../../../../../theme/colors.dart';
 
 class SearchBarApp extends StatefulWidget {
   const SearchBarApp({super.key});
@@ -34,15 +34,15 @@ class _SearchBarAppState extends State<SearchBarApp> {
   Widget build(BuildContext context) {
     return Container(
       color: AppColors.secondaryColor,
-        child: TextField(
-          style: const TextStyle(fontSize: 12, color: Colors.white),
-          decoration: const InputDecoration(
-            prefixIcon: Icon(Icons.search),
-            border: OutlineInputBorder(),
-            hintText: 'Search',
-          ),
-          controller: controller,
+      child: TextField(
+        style: const TextStyle(fontSize: 12, color: Colors.white),
+        decoration: const InputDecoration(
+          prefixIcon: Icon(Icons.search),
+          border: OutlineInputBorder(),
+          hintText: 'Search',
         ),
+        controller: controller,
+      ),
     );
   }
 }

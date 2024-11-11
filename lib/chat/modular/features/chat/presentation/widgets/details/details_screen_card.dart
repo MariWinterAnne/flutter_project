@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import '../../theme/colors.dart';
+import '../../../../../../theme/colors.dart';
 import '../text.dart';
 
 class CardView extends StatefulWidget {
@@ -51,7 +51,8 @@ class _CardViewState extends State<CardView> {
                       child: TitleText(title: widget.title),
                     ),
                     //TODO загрузку и кеширование перенести в domain-слой
-                    if (widget.cardImageLink != null && widget.cardImageLink?.isNotEmpty == true)
+                    if (widget.cardImageLink != null &&
+                        widget.cardImageLink?.isNotEmpty == true)
                       CachedNetworkImage(
                         imageUrl: widget.cardImageLink ?? '',
                         progressIndicatorBuilder:
