@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_split_view/flutter_split_view.dart';
-import '../../autoroute/screens/details_screen.dart';
-import '../../domain/models/chat_data_list_model.dart';
-import '../../theme/colors.dart';
+import '../../../../../../theme/colors.dart';
+import '../../../domain/models/chat_data_list_model.dart';
 import '../list_item.dart';
 
 class ChatsListView extends StatefulWidget {
-  const ChatsListView({super.key, required this.chatDataList});
+  const ChatsListView(
+      {super.key, required this.chatDataList, required this.path});
 
   final List<ChatDataListModel> chatDataList;
+  final String path;
 
   @override
   ChatsListViewState createState() => ChatsListViewState();
 }
 
 class ChatsListViewState extends State<ChatsListView> {
-  int selectedIndex = -1;
+  int _selectedIndex = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class ChatsListViewState extends State<ChatsListView> {
       itemBuilder: (BuildContext context, int index) {
         return GestureDetector(
           child: Container(
-            color: index == selectedIndex
+            color: index == _selectedIndex
                 ? AppColors.elementsColor
                 : AppColors.darkThemeColor,
             child: ChatListItem(
@@ -39,14 +39,15 @@ class ChatsListViewState extends State<ChatsListView> {
           onTap: () {
             setState(
               () {
-                selectedIndex = index;
+                _selectedIndex = index;
               },
             );
-            SplitView.of(context).popUntil(0);
+            Modular.to.pushNamed('/${widget.path}/${widget.chatDataList[index].id}');
+            /*SplitView.of(context).popUntil(0);
             SplitView.of(context).push(
               DetailsScreen(
                   chatElement: widget.chatDataList[selectedIndex]),
-            );
+            );*/
           },
         );
       },

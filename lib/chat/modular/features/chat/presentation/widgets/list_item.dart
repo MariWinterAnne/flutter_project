@@ -41,7 +41,7 @@ class _ChatListItemState extends State<ChatListItem> {
           TimeText(time: widget.time),
           if (widget.messages != null)
             CircleAvatar(
-              backgroundColor: Colors.white54.withAlpha(70),
+              backgroundColor: Colors.white54.withAlpha(90),
               radius: 10,
               child: FittedBox(
                 fit: BoxFit.fill,

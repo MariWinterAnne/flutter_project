@@ -1,12 +1,12 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../domain/models/chat_data_model.dart';
+import '../../modular/features/chat/domain/models/chat_data_model.dart';
+import '../../modular/features/chat/presentation/widgets/avatars/avatar_icon_stack.dart';
+import '../../modular/features/chat/presentation/widgets/search_bar.dart';
+import '../../modular/features/chat/presentation/widgets/tabbar/chats_even_list.dart';
+import '../../modular/features/chat/presentation/widgets/tabbar/chats_list.dart';
+import '../../modular/features/chat/presentation/widgets/tabbar/chats_odd_list.dart';
 import '../../theme/colors.dart';
-import '../../widgets/avatars/avatar_icon_stack.dart';
-import '../../widgets/tabbar/chats_even_list.dart';
-import '../../widgets/tabbar/chats_list.dart';
-import '../../widgets/search_bar.dart';
-import '../../widgets/tabbar/chats_odd_list.dart';
 
 @RoutePage()
 class ChatsScreen extends StatelessWidget {
@@ -101,7 +101,7 @@ class ChatsScreen extends StatelessWidget {
         ),
         body: TabBarView(
           children: [
-            ChatsListView(chatDataList: chatData.chatDataList),
+            ChatsListView(path: '', chatDataList: chatData.chatDataList),
             ChatsEvenElementsListView(chatDataList: chatData.chatDataList),
             ChatsOddElementsListView(chatDataList: chatData.chatDataList),
           ],

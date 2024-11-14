@@ -3,10 +3,7 @@ import 'package:flutter/material.dart';
 class AvatarIcon extends StatefulWidget {
   final String iconLink;
 
-  const AvatarIcon({
-    super.key,
-    required this.iconLink,
-  });
+  const AvatarIcon({super.key, required this.iconLink});
 
   @override
   State<StatefulWidget> createState() => _AvatarIconState();

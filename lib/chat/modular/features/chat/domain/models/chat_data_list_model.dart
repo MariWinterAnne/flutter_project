@@ -1,5 +1,5 @@
 class ChatDataListModel {
-  ChatDataListModel({
+  const ChatDataListModel({
     required this.id,
     required this.linkUrl,
     required this.title,
