@@ -1,5 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'data/theme_repository_impl.dart';
+import 'presentation/state/cubits/app_theme_cubit.dart';
 import 'presentation/state/cubits/chat_details_cubit.dart';
 import 'presentation/state/cubits/chats_cubit.dart';
 import 'presentation/screens/details_screen.dart';
@@ -10,16 +12,26 @@ class ChatModule extends Module {
   @override
   void binds(i) {
     i.addSingleton(ChatRepositoryImpl.new);
+    i.addSingleton(ThemeRepositoryImpl.new);
   }
 
   @override
   void routes(r) {
     r.child(
       '/',
-      child: (context) => BlocProvider(
-        create: (_) => ChatsCubit(
-          repository: Modular.get<ChatRepositoryImpl>(),
-        ),
+      child: (context) => MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (_) => ChatsCubit(
+              repository: Modular.get<ChatRepositoryImpl>(),
+            ),
+          ),
+          BlocProvider(
+            create: (_) => AppThemeCubit(
+              repository: Modular.get<ThemeRepositoryImpl>(),
+            ),
+          ),
+        ],
         child: const RootViewScreen(),
       ),
       children: [
@@ -36,11 +48,20 @@ class ChatModule extends Module {
     );
 
     r.child('/chatDetails/:chatId',
-        child: (context) => BlocProvider(
-              create: (_) => ChatDetailsCubit(
-                repository: Modular.get<ChatRepositoryImpl>(),
-                chatId: int.parse(r.args.params['chatId']),
-              ),
+        child: (context) => MultiBlocProvider(
+              providers: [
+                BlocProvider(
+                  create: (_) => ChatDetailsCubit(
+                    repository: Modular.get<ChatRepositoryImpl>(),
+                    chatId: int.parse(r.args.params['chatId']),
+                  ),
+                ),
+                BlocProvider(
+                  create: (_) => AppThemeCubit(
+                    repository: Modular.get<ThemeRepositoryImpl>(),
+                  ),
+                ),
+              ],
               child: const DetailsScreen(),
             ),
         transition: TransitionType.rightToLeft);

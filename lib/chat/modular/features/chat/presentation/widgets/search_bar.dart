@@ -1,6 +1,5 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import '../../../../../theme/colors.dart';
 
 class SearchBarApp extends StatefulWidget {
   const SearchBarApp({super.key});
@@ -11,6 +10,7 @@ class SearchBarApp extends StatefulWidget {
 
 class _SearchBarAppState extends State<SearchBarApp> {
   final controller = TextEditingController();
+  static const _search = 'Search';
 
   @override
   void initState() {
@@ -32,17 +32,16 @@ class _SearchBarAppState extends State<SearchBarApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: AppColors.secondaryColor,
-      child: TextField(
-        style: const TextStyle(fontSize: 12, color: Colors.white),
-        decoration: const InputDecoration(
-          prefixIcon: Icon(Icons.search),
-          border: OutlineInputBorder(),
-          hintText: 'Search',
-        ),
-        controller: controller,
+    return TextField(
+      style: Theme.of(context).textTheme.bodySmall,
+      decoration: InputDecoration(
+        prefixIcon: const Icon(Icons.search),
+        border: const OutlineInputBorder(),
+        hintText: _search,
+        filled: true,
+        fillColor: Theme.of(context).inputDecorationTheme.fillColor,
       ),
+      controller: controller,
     );
   }
 }

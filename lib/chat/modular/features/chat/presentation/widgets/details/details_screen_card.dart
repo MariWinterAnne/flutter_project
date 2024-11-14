@@ -1,22 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import '../../../../../../theme/colors.dart';
-import '../text.dart';
+import '../../../domain/models/chat_data_list_model.dart';
 
 class CardView extends StatefulWidget {
-  final String title;
-  final String subtitle;
-  final String link;
-  final String text;
-  final String? cardImageLink;
+  final ChatDataListModel element;
 
   const CardView({
     super.key,
-    required this.title,
-    required this.subtitle,
-    required this.link,
-    required this.text,
-    required this.cardImageLink,
+    required this.element,
   });
 
   @override
@@ -26,18 +17,17 @@ class CardView extends StatefulWidget {
 class _CardViewState extends State<CardView> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 300,
-      color: AppColors.darkThemeColor,
-      margin: const EdgeInsets.only(left: 8, top: 16),
-      child: SingleChildScrollView(
+    return Card(
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        width: 300,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             CircleAvatar(
               radius: 20,
-              backgroundImage: AssetImage(widget.link),
+              backgroundImage: AssetImage(widget.element.linkUrl),
             ),
             Flexible(
               child: Container(
@@ -48,13 +38,13 @@ class _CardViewState extends State<CardView> {
                   children: [
                     Container(
                       margin: const EdgeInsets.only(bottom: 8),
-                      child: TitleText(title: widget.title),
+                      child: Text(widget.element.title),
                     ),
                     //TODO загрузку и кеширование перенести в domain-слой
-                    if (widget.cardImageLink != null &&
-                        widget.cardImageLink?.isNotEmpty == true)
+                    if (widget.element.cardImageLink != null &&
+                        widget.element.cardImageLink?.isNotEmpty == true)
                       CachedNetworkImage(
-                        imageUrl: widget.cardImageLink ?? '',
+                        imageUrl: widget.element.cardImageLink ?? '',
                         progressIndicatorBuilder:
                             (context, url, downloadProgress) =>
                                 CircularProgressIndicator(
@@ -64,15 +54,19 @@ class _CardViewState extends State<CardView> {
                       ),
                     Container(
                       margin: const EdgeInsets.only(top: 8),
-                      child: SubtitleText(
-                          subtitleText: widget.subtitle,
-                          subtitleTextColor: Colors.white),
+                      child: Text(
+                        widget.element.subtitle,
+                        style: Theme.of(context).textTheme.bodySmall,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 8),
-                      child: Text(widget.text,
-                          style: const TextStyle(
-                              fontSize: 12, color: Colors.white)),
+                      child: Text(
+                        widget.element.text,
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
                     )
                   ],
                 ),

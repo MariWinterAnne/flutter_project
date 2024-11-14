@@ -18,9 +18,10 @@ class _AvatarIconStackState extends State<AvatarIconStack> {
   @override
   Widget build(BuildContext context) {
     const offset = 10.0;
+    const chats = 'Chats';
 
     return Container(
-      margin: const EdgeInsets.only(right: 8, left: 8, top: 8, bottom: 8),
+      margin: const EdgeInsets.only(left: 8, top: 8, bottom: 8),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -31,16 +32,14 @@ class _AvatarIconStackState extends State<AvatarIconStack> {
               (index) {
                 return Padding(
                   padding: EdgeInsets.only(right: index.toDouble() * offset),
-                  child: AvatarIcon(iconLink: widget.chatDataList[index].linkUrl),
+                  child:
+                      AvatarIcon(iconLink: widget.chatDataList[index].linkUrl),
                 );
               },
             ),
           ),
           const SizedBox(width: 8),
-          const Text(
-            'Chats',
-            style: TextStyle(fontSize: 12, color: Colors.white),
-          ),
+          const Text(chats),
         ],
       ),
     );

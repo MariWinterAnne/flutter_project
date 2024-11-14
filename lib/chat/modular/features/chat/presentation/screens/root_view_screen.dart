@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import '../../../../../theme/colors.dart';
+import '../state/app_theme_mode_state.dart';
+import '../state/cubits/app_theme_cubit.dart';
 import 'chat_screen.dart';
 
 class RootViewScreen extends StatefulWidget {
@@ -15,28 +18,37 @@ class _RootViewScreenState extends State<RootViewScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.darkThemeColor,
-      body: LayoutBuilder(
-        builder: (context, constraints) {
-          if (constraints.maxWidth > 600) {
-            return Row(
-              children: [
-                Container(
-                  width: _screenWidth,
-                  decoration:
-                      const BoxDecoration(border: Border(right: BorderSide())),
-                  child:
-                      SizedBox(width: _screenWidth, child: const ChatsScreen()),
-                ),
-                const Expanded(child: RouterOutlet()),
-              ],
-            );
-          } else {
-            return const Expanded(child: ChatsScreen());
-          }
-        },
-      ),
+    return BlocBuilder<AppThemeCubit, AppThemeModeState>(
+      builder: (context, state) {
+        return Scaffold(
+          backgroundColor: state.isDark == true
+              ? AppColors.darkPrimaryColor
+              : AppColors.primaryColor,
+          body: LayoutBuilder(
+            builder: (context, constraints) {
+              if (constraints.maxWidth > 600) {
+                return Row(
+                  children: [
+                    Container(
+                      width: _screenWidth,
+                      decoration: const BoxDecoration(
+                        border: Border(right: BorderSide()),
+                      ),
+                      child: SizedBox(
+                        width: _screenWidth,
+                        child: const ChatsScreen(),
+                      ),
+                    ),
+                    const Expanded(child: RouterOutlet()),
+                  ],
+                );
+              } else {
+                return const Expanded(child: ChatsScreen());
+              }
+            },
+          ),
+        );
+      },
     );
   }
 }

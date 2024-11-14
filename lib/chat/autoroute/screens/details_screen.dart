@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import '../../modular/features/chat/domain/models/chat_data_list_model.dart';
 import '../../modular/features/chat/presentation/widgets/details/details_screen_card.dart';
-import '../../modular/features/chat/presentation/widgets/text.dart';
 import '../../theme/colors.dart';
 
 @RoutePage()
@@ -23,7 +22,7 @@ class _DetailsScreenViewState extends State<DetailsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.darkThemeColor,
+        backgroundColor: AppColors.darkPrimaryColor,
         leading: BackButton(
           color: AppColors.elementsColor,
           onPressed: () => Navigator.pop(context, false),
@@ -39,8 +38,8 @@ class _DetailsScreenViewState extends State<DetailsScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TitleText(title: widget.chatElement.title),
-                SubtitleText(subtitleText: widget.chatElement.subtitle),
+                Text(widget.chatElement.title),
+                Text(widget.chatElement.subtitle),
               ],
             ),
           ],
@@ -64,16 +63,10 @@ class _DetailsScreenViewState extends State<DetailsScreen> {
           ),
         ],
       ),
-      body: CardView(
-        title: widget.chatElement.title,
-        subtitle: widget.chatElement.subtitle,
-        link: widget.chatElement.linkUrl,
-        cardImageLink: widget.chatElement.cardImageLink,
-        text: widget.chatElement.text,
-      ),
+      body: CardView(element: widget.chatElement),
       bottomNavigationBar: Container(
         height: 60,
-        color: AppColors.darkThemeColor,
+        color: AppColors.darkPrimaryColor,
         child: GestureDetector(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
