@@ -4,8 +4,12 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34ac4c8e-69e7-4a8e-b1d7-f6f313ae66f6" name="Changes" comment="">
-      <changelist_data name="MariWinterAnne" email="104363300+mariwinteranne@users.noreply.github.com" />
+    <list default="true" id="34ac4c8e-69e7-4a8e-b1d7-f6f313ae66f6" name="Changes" comment="UI + autorouter.">
+      <change beforePath="$PROJECT_DIR$/lib/chat/autoroute/app/router.gr.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/autoroute/app/router.gr.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/autoroute/screens/details_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/autoroute/screens/details_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/widgets/tabbar/chats_even_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/widgets/tabbar/chats_even_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/widgets/tabbar/chats_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/widgets/tabbar/chats_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/widgets/tabbar/chats_odd_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/widgets/tabbar/chats_odd_list.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,34 +25,61 @@
         <option value="MariWinterAnne &lt;104363300+mariwinteranne@users.noreply.github.com&gt;" />
       </list>
     </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2oQJA6iVvAdCgvkIQq9vC37cHeR" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "dart.settings",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/add__main__screen__ui&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/user/StudioProjects/flutter_project/assets/images&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/images" />
+      <recent name="$PROJECT_DIR$/lib/chat/widgets/details" />
+      <recent name="$PROJECT_DIR$/lib/chat/widgets/custom_split_view" />
+      <recent name="$PROJECT_DIR$/lib/chat/widgets/tabbar" />
+      <recent name="$PROJECT_DIR$/lib/chat/widgets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/chat/widgets/tabbar" />
+      <recent name="$PROJECT_DIR$/lib/chat/widgets/avatars" />
+      <recent name="$PROJECT_DIR$/lib/chat/widgets/details" />
+      <recent name="$PROJECT_DIR$/lib/chat/widgets" />
+      <recent name="$PROJECT_DIR$/lib/chat/autoroute/screens" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="main.dart" type="FlutterRunConfigurationType" factoryName="Flutter">
       <option name="filePath" value="$PROJECT_DIR$/lib/main.dart" />
@@ -64,6 +95,31 @@
       <option name="presentableId" value="Default" />
       <updated>1730795729214</updated>
     </task>
+    <task id="LOCAL-00001" summary="First commit.">
+      <option name="closed" value="true" />
+      <created>1730798813672</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1730798813672</updated>
+    </task>
+    <task id="LOCAL-00002" summary="UI + autorouter.">
+      <option name="closed" value="true" />
+      <created>1731005963097</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1731005963098</updated>
+    </task>
+    <task id="LOCAL-00003" summary="UI + autorouter.">
+      <option name="closed" value="true" />
+      <created>1731074831492</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1731074831493</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -78,6 +134,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="First commit." />
+    <MESSAGE value="UI + autorouter." />
+    <option name="LAST_COMMIT_MESSAGE" value="UI + autorouter." />
   </component>
 </project>
