@@ -2,15 +2,14 @@ import 'package:flutter/material.dart';
 import '../../../../../theme/colors.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../../theme/custom_theme.dart';
+import '../../../../utils/string_extensions.dart';
 import '../state/app_theme_mode_state.dart';
 import '../state/chat_screen_state.dart';
 import '../state/cubits/app_theme_cubit.dart';
 import '../state/cubits/chats_cubit.dart';
 import '../widgets/avatars/avatar_icon_stack.dart';
 import '../widgets/search_bar.dart';
-import '../widgets/tabbar/chats_even_list.dart';
 import '../widgets/tabbar/chats_list.dart';
-import '../widgets/tabbar/chats_odd_list.dart';
 
 class ChatsScreen extends StatefulWidget {
   const ChatsScreen({super.key});
@@ -51,7 +50,9 @@ class _ChatsScreen extends State<ChatsScreen> with TickerProviderStateMixin {
               title: BlocBuilder<ChatsCubit, ChatScreenState>(
                 builder: (context, state) {
                   return AvatarIconStack(
-                    chatDataList: state.chatData.chatDataList.sublist(0, 3),
+                    chatDataList: state.chatData.chatDataList.isNotEmpty
+                        ? state.chatData.chatDataList.take(3).toList()
+                        : [],
                   );
                 },
               ),
@@ -148,13 +149,17 @@ class _ChatsScreen extends State<ChatsScreen> with TickerProviderStateMixin {
                       path: path,
                       chatDataList: state.chatData.chatDataList,
                     ),
-                    ChatsEvenElementsListView(
+                    ChatsListView(
                       path: path,
-                      chatDataList: state.chatData.chatDataList,
+                      chatDataList: state.chatData.chatDataList
+                          .where((element) => element.type == 'Personal')
+                          .toList(),
                     ),
-                    ChatsOddElementsListView(
+                    ChatsListView(
                       path: path,
-                      chatDataList: state.chatData.chatDataList,
+                      chatDataList: state.chatData.chatDataList
+                          .where((element) => element.type == 'Others')
+                          .toList(),
                     ),
                   ],
                 );
@@ -162,22 +167,22 @@ class _ChatsScreen extends State<ChatsScreen> with TickerProviderStateMixin {
             ),
             bottomNavigationBar: BottomNavigationBar(
               currentIndex: selectedIndex,
-              items: const <BottomNavigationBarItem>[
+              items: <BottomNavigationBarItem>[
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.account_circle),
-                  label: '',
+                  icon: const Icon(Icons.account_circle),
+                  label: empty(),
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.call),
-                  label: '',
+                  icon: const Icon(Icons.call),
+                  label: empty(),
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.chat),
-                  label: '',
+                  icon: const Icon(Icons.chat),
+                  label: empty(),
                 ),
                 BottomNavigationBarItem(
-                  icon: Icon(Icons.settings),
-                  label: '',
+                  icon: const Icon(Icons.settings),
+                  label: empty(),
                 ),
               ],
             ),

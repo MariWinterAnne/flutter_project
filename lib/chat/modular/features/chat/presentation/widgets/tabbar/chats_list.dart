@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import '../../../domain/models/chat_data_list_model.dart';
+import '../../../domain/models/chat_data_list.dart';
 import '../list_item.dart';
 
 class ChatsListView extends StatefulWidget {
   const ChatsListView(
       {super.key, required this.chatDataList, required this.path});
 
-  final List<ChatDataListModel> chatDataList;
+  final List<ChatDataList> chatDataList;
   final String path;
 
   @override

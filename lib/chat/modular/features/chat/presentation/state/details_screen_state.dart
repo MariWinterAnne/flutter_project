@@ -1,12 +1,12 @@
 import 'package:equatable/equatable.dart';
-import '../../domain/models/chat_data_list_model.dart';
+import '../../domain/models/chat_data_list.dart';
 
 class DetailsScreenState extends Equatable {
-  final ChatDataListModel currentChat;
+  final ChatDataList currentChat;
 
   const DetailsScreenState({required this.currentChat});
 
-  factory DetailsScreenState.initial(ChatDataListModel currentChat) {
+  factory DetailsScreenState.initial(ChatDataList currentChat) {
     return DetailsScreenState(currentChat: currentChat);
   }
 

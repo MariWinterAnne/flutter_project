@@ -1,9 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import '../../../domain/models/chat_data_list_model.dart';
+import '../../../../../utils/string_extensions.dart';
+import '../../../domain/models/chat_data_list.dart';
 
 class CardView extends StatefulWidget {
-  final ChatDataListModel element;
+  final ChatDataList element;
 
   const CardView({
     super.key,
@@ -40,11 +41,10 @@ class _CardViewState extends State<CardView> {
                       margin: const EdgeInsets.only(bottom: 8),
                       child: Text(widget.element.title),
                     ),
-                    //TODO загрузку и кеширование перенести в domain-слой
                     if (widget.element.cardImageLink != null &&
                         widget.element.cardImageLink?.isNotEmpty == true)
                       CachedNetworkImage(
-                        imageUrl: widget.element.cardImageLink ?? '',
+                        imageUrl: widget.element.cardImageLink ?? empty(),
                         progressIndicatorBuilder:
                             (context, url, downloadProgress) =>
                                 CircularProgressIndicator(

@@ -16,7 +16,8 @@ class ChatDataModel {
         time: '19:00',
         unreadMessages: '11',
         text: '',
-        cardImageLink: '',
+        cardImageLink: 'https://i.ytimg.com/vi/--PQXg_mx9I/maxresdefault.jpg',
+        type: 'Personal',
       ),
       ChatDataListModel(
         id: 1,
@@ -42,6 +43,7 @@ class ChatDataModel {
             'Instead of using BottomNavigationBar.currentIndex, use NavigationBar.selectedIndex, which is also an integer that represents the index of the selected destination.'
             'You may also need to make changes to the styling of the NavigationBar, see the properties in the NavigationBar constructor for more details.',
         cardImageLink: 'https://i.ytimg.com/vi/jHKHX959V20/mqdefault.jpg',
+        type: 'Others',
       ),
       ChatDataListModel(
         id: 2,
@@ -51,7 +53,8 @@ class ChatDataModel {
         time: '13:51',
         unreadMessages: null,
         text: '',
-        cardImageLink: '',
+        cardImageLink: 'https://i.ytimg.com/vi/Gu-rIu6Zw9w/maxresdefault.jpg',
+        type: 'Personal',
       ),
       ChatDataListModel(
         id: 3,
@@ -61,7 +64,9 @@ class ChatDataModel {
         time: '07:40',
         unreadMessages: '1',
         text: '',
-        cardImageLink: '',
+        cardImageLink:
+            'https://i.pinimg.com/originals/25/c7/53/25c753e58b453f69924874177ebafb30.jpg',
+        type: 'Others',
       ),
       ChatDataListModel(
         id: 4,
@@ -71,7 +76,8 @@ class ChatDataModel {
         time: '00:17',
         unreadMessages: null,
         text: '',
-        cardImageLink: '',
+        cardImageLink: 'https://i.ytimg.com/vi/0RHKayaQtFQ/maxresdefault.jpg',
+        type: 'Personal',
       ),
       ChatDataListModel(
         id: 5,
@@ -81,7 +87,8 @@ class ChatDataModel {
         time: '16:03',
         unreadMessages: null,
         text: '',
-        cardImageLink: '',
+        cardImageLink: 'https://i.ytimg.com/vi/PSjddHiR6nY/maxresdefault.jpg',
+        type: 'Others',
       ),
       ChatDataListModel(
         id: 6,
@@ -92,18 +99,11 @@ class ChatDataModel {
         unreadMessages: null,
         text: '',
         cardImageLink: null,
+        type: 'Personal',
       ),
     ],
   });
 
   final List<String> titles;
   final List<ChatDataListModel> chatDataList;
-
-  ChatDataModel copyWith(
-      {final List<String>? titles,
-      final List<ChatDataListModel>? chatDataList}) {
-    return ChatDataModel(
-        titles: titles ?? this.titles,
-        chatDataList: chatDataList ?? this.chatDataList);
-  }
 }

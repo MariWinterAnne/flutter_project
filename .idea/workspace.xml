@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34ac4c8e-69e7-4a8e-b1d7-f6f313ae66f6" name="Changes" comment="Themes." />
+    <list default="true" id="34ac4c8e-69e7-4a8e-b1d7-f6f313ae66f6" name="Changes" comment="Clean architecture.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/data/repository/chat_repository_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/data/repository/chat_repository_impl.dart" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +24,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/add_main_screen_ui" />
+        <entry key="$PROJECT_DIR$" value="feature/theme" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -48,9 +51,9 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/theme&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/clean__architecture&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/user/StudioProjects/flutter_project/lib/chat/modular/features/data&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/user/StudioProjects/flutter_project/lib/chat/modular/features/chat/data/models&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
@@ -60,18 +63,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/data/models" />
       <recent name="$PROJECT_DIR$/lib/chat/modular/features/data" />
       <recent name="$PROJECT_DIR$/assets/images" />
       <recent name="$PROJECT_DIR$/lib/chat/widgets/details" />
       <recent name="$PROJECT_DIR$/lib/chat/widgets/custom_split_view" />
-      <recent name="$PROJECT_DIR$/lib/chat/widgets/tabbar" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/state" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features" />
       <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/domain/repository" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/data" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/data/repository" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/state" />
     </key>
   </component>
   <component name="RunManager">
@@ -185,7 +188,63 @@
       <option name="project" value="LOCAL" />
       <updated>1731933349845</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Themes.">
+      <option name="closed" value="true" />
+      <created>1732005203871</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1732005203871</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Themes.">
+      <option name="closed" value="true" />
+      <created>1732006725073</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1732006725073</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Themes.">
+      <option name="closed" value="true" />
+      <created>1732011041404</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1732011041404</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Clean architecture.">
+      <option name="closed" value="true" />
+      <created>1732027324995</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1732027324995</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Clean architecture.">
+      <option name="closed" value="true" />
+      <created>1732029462083</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1732029462083</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Clean architecture.">
+      <option name="closed" value="true" />
+      <created>1732094171561</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1732094171561</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Clean architecture.">
+      <option name="closed" value="true" />
+      <created>1732094229605</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1732094229605</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -204,6 +263,7 @@
     <MESSAGE value="UI + autorouter." />
     <MESSAGE value="Modular." />
     <MESSAGE value="Themes." />
-    <option name="LAST_COMMIT_MESSAGE" value="Themes." />
+    <MESSAGE value="Clean architecture." />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean architecture." />
   </component>
 </project>
