@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-import 'text.dart';
+import 'package:flutter_modular/flutter_modular.dart';
+import '../../../../../theme/colors.dart';
+import '../../domain/models/chat_data_list_model.dart';
 
 class ChatListItem extends StatefulWidget {
-  final String linkUrl;
-  final String title;
-  final String subtitle;
-  final String time;
-  final String? messages;
+  final ChatDataListModel element;
+  final String path;
 
   const ChatListItem({
     super.key,
-    required this.linkUrl,
-    required this.title,
-    required this.subtitle,
-    required this.time,
-    required this.messages,
+    required this.element,
+    required this.path,
   });
 
   @override
@@ -29,27 +25,48 @@ class _ChatListItemState extends State<ChatListItem> {
         width: 40,
         height: 40,
         child: CircleAvatar(
-          backgroundImage: AssetImage(widget.linkUrl),
+          backgroundImage: AssetImage(widget.element.linkUrl),
         ),
       ),
-      title: TitleText(title: widget.title),
-      subtitle: SubtitleText(subtitleText: widget.subtitle),
+      title: Text(widget.element.title),
+      subtitle: Text(widget.element.subtitle),
       trailing: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          TimeText(time: widget.time),
-          if (widget.messages != null)
+          Text(
+            widget.element.time,
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                  fontSize: 8,
+                  color: AppColors.greyColor,
+                ),
+          ),
+          if (widget.element.unreadMessages != null)
             CircleAvatar(
-              backgroundColor: Colors.white54.withAlpha(90),
+              backgroundColor: AppColors.greyColor.withAlpha(70),
               radius: 10,
               child: FittedBox(
                 fit: BoxFit.fill,
-                child: Text(widget.messages as String),
+                child: Text(
+                  widget.element.unreadMessages as String,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodySmall
+                      ?.copyWith(fontSize: 8),
+                ),
               ),
             ),
         ],
       ),
+      onTap: () {
+        Modular.to.pushNamed('/${widget.path}/${widget.element.id}');
+
+        /*SplitView.of(context).popUntil(0);
+            SplitView.of(context).push(
+              DetailsScreen(
+                  chatElement: widget.chatDataList[selectedIndex]),
+            );*/
+      },
     );
   }
 }

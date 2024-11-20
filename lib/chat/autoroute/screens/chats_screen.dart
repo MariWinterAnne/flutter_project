@@ -23,7 +23,7 @@ class ChatsScreen extends StatelessWidget {
         appBar: PreferredSize(
           preferredSize: const Size(double.infinity, 130),
           child: AppBar(
-            backgroundColor: AppColors.darkThemeColor,
+            backgroundColor: AppColors.darkPrimaryColor,
             title: AvatarIconStack(
               chatDataList: chatData.chatDataList
                   .sublist(0, 3), // TODO: links передавать из слоя domain
@@ -71,7 +71,7 @@ class ChatsScreen extends StatelessWidget {
                     ),
                   ),
                   Container(
-                    color: AppColors.secondaryColor,
+                    color: AppColors.darkSecondaryColor,
                     alignment: Alignment.center,
                     width: MediaQuery.of(context).size.width,
                     height: 20,
@@ -102,8 +102,8 @@ class ChatsScreen extends StatelessWidget {
         body: TabBarView(
           children: [
             ChatsListView(path: '', chatDataList: chatData.chatDataList),
-            ChatsEvenElementsListView(chatDataList: chatData.chatDataList),
-            ChatsOddElementsListView(chatDataList: chatData.chatDataList),
+            ChatsEvenElementsListView(path: '', chatDataList: chatData.chatDataList),
+            ChatsOddElementsListView(path: '', chatDataList: chatData.chatDataList),
           ],
         ),
       ),
