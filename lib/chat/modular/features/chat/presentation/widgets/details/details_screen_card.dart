@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import '../../../../../utils/string_extensions.dart';
 import '../../../domain/models/chat_data_list.dart';
+import '../animated_avatar.dart';
 
 class CardView extends StatefulWidget {
   final ChatDataList element;
@@ -26,10 +27,7 @@ class _CardViewState extends State<CardView> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CircleAvatar(
-              radius: 20,
-              backgroundImage: AssetImage(widget.element.linkUrl),
-            ),
+            AnimatedAvatar(imageUrl: widget.element.linkUrl),
             Flexible(
               child: Container(
                 margin: const EdgeInsets.only(left: 8),
@@ -43,14 +41,17 @@ class _CardViewState extends State<CardView> {
                     ),
                     if (widget.element.cardImageLink != null &&
                         widget.element.cardImageLink?.isNotEmpty == true)
-                      CachedNetworkImage(
-                        imageUrl: widget.element.cardImageLink ?? empty(),
-                        progressIndicatorBuilder:
-                            (context, url, downloadProgress) =>
-                                CircularProgressIndicator(
-                                    value: downloadProgress.progress),
-                        errorWidget: (context, url, error) =>
-                            const Icon(Icons.error),
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: CachedNetworkImage(
+                          imageUrl: widget.element.cardImageLink ?? empty(),
+                          progressIndicatorBuilder:
+                              (context, url, downloadProgress) =>
+                                  CircularProgressIndicator(
+                                      value: downloadProgress.progress),
+                          errorWidget: (context, url, error) =>
+                              const Icon(Icons.error),
+                        ),
                       ),
                     Container(
                       margin: const EdgeInsets.only(top: 8),
