@@ -1,16 +1,16 @@
 import 'package:equatable/equatable.dart';
-import '../../domain/models/chat_data_model.dart';
+import '../../domain/models/chat_data.dart';
 
 class ChatScreenState extends Equatable {
-  final ChatDataModel chatData;
+  final ChatData chatData;
 
   const ChatScreenState({required this.chatData});
 
   factory ChatScreenState.initial() {
-    return ChatScreenState(chatData: ChatDataModel());
+    return ChatScreenState(chatData: ChatData());
   }
 
-  ChatScreenState copyWith({ChatDataModel? chatData}) {
+  ChatScreenState copyWith({ChatData? chatData}) {
     return ChatScreenState(chatData: chatData ?? this.chatData);
   }
 

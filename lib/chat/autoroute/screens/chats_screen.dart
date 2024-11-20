@@ -1,11 +1,9 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../modular/features/chat/domain/models/chat_data_model.dart';
+import '../../modular/features/chat/domain/models/chat_data.dart';
 import '../../modular/features/chat/presentation/widgets/avatars/avatar_icon_stack.dart';
 import '../../modular/features/chat/presentation/widgets/search_bar.dart';
-import '../../modular/features/chat/presentation/widgets/tabbar/chats_even_list.dart';
 import '../../modular/features/chat/presentation/widgets/tabbar/chats_list.dart';
-import '../../modular/features/chat/presentation/widgets/tabbar/chats_odd_list.dart';
 import '../../theme/colors.dart';
 
 @RoutePage()
@@ -14,7 +12,7 @@ class ChatsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ChatDataModel chatData = ChatDataModel();
+    ChatData chatData = ChatData();
 
     return DefaultTabController(
       initialIndex: 0,
@@ -25,8 +23,9 @@ class ChatsScreen extends StatelessWidget {
           child: AppBar(
             backgroundColor: AppColors.darkPrimaryColor,
             title: AvatarIconStack(
-              chatDataList: chatData.chatDataList
-                  .sublist(0, 3), // TODO: links передавать из слоя domain
+              chatDataList: chatData.chatDataList.isNotEmpty
+                  ? chatData.chatDataList.sublist(0, 3)
+                  : [],
             ),
             notificationPredicate: (ScrollNotification notification) {
               return notification.depth == 1;
@@ -102,8 +101,18 @@ class ChatsScreen extends StatelessWidget {
         body: TabBarView(
           children: [
             ChatsListView(path: '', chatDataList: chatData.chatDataList),
-            ChatsEvenElementsListView(path: '', chatDataList: chatData.chatDataList),
-            ChatsOddElementsListView(path: '', chatDataList: chatData.chatDataList),
+            ChatsListView(
+              path: '',
+              chatDataList: chatData.chatDataList
+                  .where((element) => element.type == 'Personal')
+                  .toList(),
+            ),
+            ChatsListView(
+              path: '',
+              chatDataList: chatData.chatDataList
+                  .where((element) => element.type == 'Others')
+                  .toList(),
+            ),
           ],
         ),
       ),

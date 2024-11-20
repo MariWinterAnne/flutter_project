@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../../domain/models/chat_data_list_model.dart';
+import '../../../domain/models/chat_data_list.dart';
 import 'avatar_icon.dart';
 
 class AvatarIconStack extends StatefulWidget {
-  final List<ChatDataListModel> chatDataList;
+  final List<ChatDataList> chatDataList;
 
   const AvatarIconStack({
     super.key,

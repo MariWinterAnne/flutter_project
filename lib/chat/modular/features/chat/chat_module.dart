@@ -1,12 +1,12 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'data/theme_repository_impl.dart';
+import 'data/repository/theme_repository_impl.dart';
 import 'presentation/state/cubits/app_theme_cubit.dart';
 import 'presentation/state/cubits/chat_details_cubit.dart';
 import 'presentation/state/cubits/chats_cubit.dart';
 import 'presentation/screens/details_screen.dart';
 import 'presentation/screens/root_view_screen.dart';
-import 'data/chat_repository_impl.dart';
+import 'data/repository/chat_repository_impl.dart';
 
 class ChatModule extends Module {
   @override

@@ -21,7 +21,7 @@ import 'package:flutter_project/chat/autoroute/screens/profile_screen.dart'
 import 'package:flutter_project/chat/autoroute/screens/root_screen.dart' as _i5;
 import 'package:flutter_project/chat/autoroute/screens/settings_screen.dart'
     as _i6;
-import 'package:flutter_project/chat/modular/features/chat/domain/models/chat_data_list_model.dart'
+import 'package:flutter_project/chat/modular/features/chat/domain/models/chat_data_list.dart'
     as _i9;
 
 /// generated route for
@@ -67,7 +67,7 @@ class ChatsRoute extends _i7.PageRouteInfo<void> {
 class DetailsRoute extends _i7.PageRouteInfo<DetailsRouteArgs> {
   DetailsRoute({
     _i8.Key? key,
-    required _i9.ChatDataListModel chatElement,
+    required _i9.ChatDataList chatElement,
     List<_i7.PageRouteInfo>? children,
   }) : super(
           DetailsRoute.name,
@@ -100,7 +100,7 @@ class DetailsRouteArgs {
 
   final _i8.Key? key;
 
-  final _i9.ChatDataListModel chatElement;
+  final _i9.ChatDataList chatElement;
 
   @override
   String toString() {
