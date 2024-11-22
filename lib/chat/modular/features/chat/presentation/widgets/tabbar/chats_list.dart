@@ -14,20 +14,57 @@ class ChatsListView extends StatefulWidget {
 }
 
 class ChatsListViewState extends State<ChatsListView> {
+  final _listItems = [];
+  final GlobalKey<AnimatedListState> _key = GlobalKey();
+
+  @override
+  void initState() {
+    super.initState();
+
+    _loadItems();
+  }
+
+  void _loadItems() {
+    var future = Future(() {});
+    for (var element in widget.chatDataList) {
+      future = future.then(
+        (_) {
+          return Future.delayed(
+            const Duration(milliseconds: 100),
+            () {
+              _listItems.add(element);
+              _key.currentState?.insertItem(_listItems.length - 1);
+            },
+          );
+        },
+      );
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
+    return AnimatedList(
+      key: _key,
       padding: const EdgeInsets.all(8),
-      itemCount: widget.chatDataList.length,
-      itemBuilder: (BuildContext context, int index) {
-        return ChatListItem(
-          element: widget.chatDataList[index],
-          path: widget.path,
+      initialItemCount: _listItems.length,
+      itemBuilder:
+          (BuildContext context, int index, Animation<double> animation) {
+        return SlideTransition(
+          position: CurvedAnimation(
+            curve: Curves.easeOut,
+            parent: animation,
+          ).drive(
+            (Tween<Offset>(
+              begin: const Offset(1, 0),
+              end: const Offset(0, 0),
+            )),
+          ),
+          child: ChatListItem(
+            element: _listItems[index],
+            path: widget.path,
+          ),
         );
       },
-      separatorBuilder: (BuildContext context, int index) => const Divider(
-        height: 8,
-      ),
     );
   }
 }

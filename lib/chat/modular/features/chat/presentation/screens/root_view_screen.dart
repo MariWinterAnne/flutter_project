@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import '../../../../../theme/colors.dart';
+import '../../../bottom_bar_navigation.dart';
 import '../state/app_theme_mode_state.dart';
 import '../state/cubits/app_theme_cubit.dart';
-import 'chat_screen.dart';
 
 class RootViewScreen extends StatefulWidget {
   const RootViewScreen({super.key});
@@ -36,14 +36,14 @@ class _RootViewScreenState extends State<RootViewScreen> {
                       ),
                       child: SizedBox(
                         width: _screenWidth,
-                        child: const ChatsScreen(),
+                        child: const BottomNavigation(),
                       ),
                     ),
                     const Expanded(child: RouterOutlet()),
                   ],
                 );
               } else {
-                return const Expanded(child: ChatsScreen());
+                return const Expanded(child: BottomNavigation());
               }
             },
           ),
