@@ -1,5 +1,5 @@
 import 'package:bloc/bloc.dart';
-import '../../../domain/repository/theme_repository.dart';
+import '../../../domain/theme_repository.dart';
 import '../app_theme_mode_state.dart';
 
 class AppThemeCubit extends Cubit<AppThemeModeState> {

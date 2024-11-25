@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import '../../../../../theme/colors.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../../../../theme/custom_theme.dart';
-import '../state/app_theme_mode_state.dart';
+import '../../../../theme/colors.dart';
+import '../../../../theme/custom_theme.dart';
+import '../../../settings/presentation/state/app_theme_mode_state.dart';
 import '../state/chat_screen_state.dart';
-import '../state/cubits/app_theme_cubit.dart';
+import '../../../settings/presentation/state/cubits/app_theme_cubit.dart';
 import '../state/cubits/chats_cubit.dart';
 import '../widgets/avatars/avatar_icon_stack.dart';
 import '../widgets/search_bar.dart';
@@ -129,19 +129,9 @@ class _ChatsScreen extends State<ChatsScreen> with TickerProviderStateMixin {
                     actions: [
                       Container(
                         margin: const EdgeInsets.only(right: 8),
-                        child: BlocBuilder<AppThemeCubit, AppThemeModeState>(
-                          builder: (context, state) {
-                            return IconButton(
-                              icon: state.isDark == true
-                                  ? const Icon(Icons.light_mode_outlined)
-                                  : const Icon(Icons.mode_night_outlined),
-                              onPressed: () {
-                                context
-                                    .read<AppThemeCubit>()
-                                    .updateAppTheme(!state.isDark);
-                              },
-                            );
-                          },
+                        child: IconButton(
+                          icon: const Icon(Icons.edit_note),
+                          onPressed: () {},
                         ),
                       ),
                     ],

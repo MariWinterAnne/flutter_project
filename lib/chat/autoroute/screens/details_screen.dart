@@ -2,7 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import '../../modular/features/chat/domain/models/chat_data_list.dart';
 import '../../modular/features/chat/presentation/widgets/details/details_screen_card.dart';
-import '../../theme/colors.dart';
+import '../../modular/theme/colors.dart';
 
 @RoutePage()
 class DetailsScreen extends StatefulWidget {

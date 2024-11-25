@@ -1,9 +1,9 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import '../../../../../theme/colors.dart';
-import '../../../../../theme/custom_theme.dart';
-import '../state/app_theme_mode_state.dart';
-import '../state/cubits/app_theme_cubit.dart';
+import '../../../../theme/colors.dart';
+import '../../../../theme/custom_theme.dart';
+import '../../../settings/presentation/state/app_theme_mode_state.dart';
+import '../../../settings/presentation/state/cubits/app_theme_cubit.dart';
 import '../state/cubits/chat_details_cubit.dart';
 import '../state/details_screen_state.dart';
 import '../widgets/animated_back_icon.dart';

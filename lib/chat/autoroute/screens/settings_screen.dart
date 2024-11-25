@@ -1,6 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import '../../theme/colors.dart';
+import '../../modular/theme/colors.dart';
 
 @RoutePage()
 class SettingsScreen extends StatelessWidget {

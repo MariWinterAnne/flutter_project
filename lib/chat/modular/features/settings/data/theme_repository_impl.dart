@@ -1,5 +1,5 @@
 import 'package:shared_preferences/shared_preferences.dart';
-import '../../domain/repository/theme_repository.dart';
+import '../domain/theme_repository.dart';
 
 class ThemeRepositoryImpl implements ThemeRepository {
   @override

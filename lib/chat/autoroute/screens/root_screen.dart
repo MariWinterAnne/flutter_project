@@ -1,8 +1,8 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_split_view/flutter_split_view.dart';
-import '../../../main.dart';
-import '../../theme/colors.dart';
+import '../../modular/theme/colors.dart';
+import '../../modular/theme/custom_theme.dart';
 import '../app/router.gr.dart';
 
 @RoutePage()
@@ -13,7 +13,8 @@ class RootScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       themeMode: ThemeMode.dark,
-      darkTheme: appTheme,
+      darkTheme: CustomTheme.darkTheme,
+      theme: CustomTheme.lightTheme,
       home: SplitView.material(
         child: AutoTabsScaffold(
           routes: const [

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import '../../../../../theme/colors.dart';
+import '../../../../theme/colors.dart';
 import '../../domain/models/chat_data_list.dart';
 
 class ChatListItem extends StatefulWidget {
