@@ -3,10 +3,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import '../chat/data/repository/chat_repository_impl.dart';
-import '../chat/data/repository/theme_repository_impl.dart';
+import '../settings/data/theme_repository_impl.dart';
 import '../chat/presentation/screens/details_screen.dart';
 import '../chat/presentation/screens/root_view_screen.dart';
-import '../chat/presentation/state/cubits/app_theme_cubit.dart';
+import '../settings/presentation/state/cubits/app_theme_cubit.dart';
 import '../chat/presentation/state/cubits/chat_details_cubit.dart';
 import '../chat/presentation/state/cubits/chats_cubit.dart';
 
