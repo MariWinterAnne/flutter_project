@@ -1,5 +1,5 @@
-class ChatDataListModel {
-  const ChatDataListModel({
+class ChatDataList {
+  const ChatDataList({
     required this.id,
     required this.linkUrl,
     required this.title,
@@ -8,6 +8,7 @@ class ChatDataListModel {
     required this.unreadMessages,
     required this.text,
     required this.cardImageLink,
+    required this.type,
   });
 
   final int id;
@@ -18,4 +19,5 @@ class ChatDataListModel {
   final String? unreadMessages;
   final String text;
   final String? cardImageLink;
+  final String type;
 }

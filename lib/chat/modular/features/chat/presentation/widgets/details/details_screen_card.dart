@@ -1,22 +1,15 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import '../../../../../../theme/colors.dart';
-import '../text.dart';
+import '../../../../../utils/string_extensions.dart';
+import '../../../domain/models/chat_data_list.dart';
+import '../animated_avatar.dart';
 
 class CardView extends StatefulWidget {
-  final String title;
-  final String subtitle;
-  final String link;
-  final String text;
-  final String? cardImageLink;
+  final ChatDataList element;
 
   const CardView({
     super.key,
-    required this.title,
-    required this.subtitle,
-    required this.link,
-    required this.text,
-    required this.cardImageLink,
+    required this.element,
   });
 
   @override
@@ -26,19 +19,15 @@ class CardView extends StatefulWidget {
 class _CardViewState extends State<CardView> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 300,
-      color: AppColors.darkThemeColor,
-      margin: const EdgeInsets.only(left: 8, top: 16),
-      child: SingleChildScrollView(
+    return Card(
+      child: Container(
+        padding: const EdgeInsets.all(8),
+        width: 300,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CircleAvatar(
-              radius: 20,
-              backgroundImage: AssetImage(widget.link),
-            ),
+            AnimatedAvatar(imageUrl: widget.element.linkUrl),
             Flexible(
               child: Container(
                 margin: const EdgeInsets.only(left: 8),
@@ -48,31 +37,37 @@ class _CardViewState extends State<CardView> {
                   children: [
                     Container(
                       margin: const EdgeInsets.only(bottom: 8),
-                      child: TitleText(title: widget.title),
+                      child: Text(widget.element.title),
                     ),
-                    //TODO загрузку и кеширование перенести в domain-слой
-                    if (widget.cardImageLink != null &&
-                        widget.cardImageLink?.isNotEmpty == true)
-                      CachedNetworkImage(
-                        imageUrl: widget.cardImageLink ?? '',
-                        progressIndicatorBuilder:
-                            (context, url, downloadProgress) =>
-                                CircularProgressIndicator(
-                                    value: downloadProgress.progress),
-                        errorWidget: (context, url, error) =>
-                            const Icon(Icons.error),
+                    if (widget.element.cardImageLink != null &&
+                        widget.element.cardImageLink?.isNotEmpty == true)
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: CachedNetworkImage(
+                          imageUrl: widget.element.cardImageLink ?? empty(),
+                          progressIndicatorBuilder:
+                              (context, url, downloadProgress) =>
+                                  CircularProgressIndicator(
+                                      value: downloadProgress.progress),
+                          errorWidget: (context, url, error) =>
+                              const Icon(Icons.error),
+                        ),
                       ),
                     Container(
                       margin: const EdgeInsets.only(top: 8),
-                      child: SubtitleText(
-                          subtitleText: widget.subtitle,
-                          subtitleTextColor: Colors.white),
+                      child: Text(
+                        widget.element.subtitle,
+                        style: Theme.of(context).textTheme.bodySmall,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                      ),
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 8),
-                      child: Text(widget.text,
-                          style: const TextStyle(
-                              fontSize: 12, color: Colors.white)),
+                      child: Text(
+                        widget.element.text,
+                        style: Theme.of(context).textTheme.bodySmall,
+                      ),
                     )
                   ],
                 ),

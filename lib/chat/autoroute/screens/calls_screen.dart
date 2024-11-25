@@ -10,7 +10,7 @@ class CallsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColors.darkThemeColor,
+        backgroundColor: AppColors.darkPrimaryColor,
         title: const Text(
           'Calls',
           style: TextStyle(color: Colors.white),

@@ -36,28 +36,28 @@ class RootScreen extends StatelessWidget {
                     Icons.account_circle,
                   ),
                   label: '',
-                  backgroundColor: AppColors.darkThemeColor,
+                  backgroundColor: AppColors.darkPrimaryColor,
                 ),
                 BottomNavigationBarItem(
                   icon: const Icon(
                     Icons.call,
                   ),
                   label: '',
-                  backgroundColor: AppColors.darkThemeColor,
+                  backgroundColor: AppColors.darkPrimaryColor,
                 ),
                 BottomNavigationBarItem(
                   icon: const Icon(
                     Icons.chat,
                   ),
                   label: '',
-                  backgroundColor: AppColors.darkThemeColor,
+                  backgroundColor: AppColors.darkPrimaryColor,
                 ),
                 BottomNavigationBarItem(
                   icon: const Icon(
                     Icons.settings,
                   ),
                   label: '',
-                  backgroundColor: AppColors.darkThemeColor,
+                  backgroundColor: AppColors.darkPrimaryColor,
                 ),
               ],
             );

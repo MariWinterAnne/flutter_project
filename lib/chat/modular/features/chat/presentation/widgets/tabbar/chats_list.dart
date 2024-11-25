@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
-import '../../../../../../theme/colors.dart';
-import '../../../domain/models/chat_data_list_model.dart';
+import '../../../domain/models/chat_data_list.dart';
 import '../list_item.dart';
 
 class ChatsListView extends StatefulWidget {
   const ChatsListView(
       {super.key, required this.chatDataList, required this.path});
 
-  final List<ChatDataListModel> chatDataList;
+  final List<ChatDataList> chatDataList;
   final String path;
 
   @override
@@ -16,46 +14,57 @@ class ChatsListView extends StatefulWidget {
 }
 
 class ChatsListViewState extends State<ChatsListView> {
-  int _selectedIndex = -1;
+  final _listItems = [];
+  final GlobalKey<AnimatedListState> _key = GlobalKey();
+
+  @override
+  void initState() {
+    super.initState();
+
+    _loadItems();
+  }
+
+  void _loadItems() {
+    var future = Future(() {});
+    for (var element in widget.chatDataList) {
+      future = future.then(
+        (_) {
+          return Future.delayed(
+            const Duration(milliseconds: 100),
+            () {
+              _listItems.add(element);
+              _key.currentState?.insertItem(_listItems.length - 1);
+            },
+          );
+        },
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      itemCount: widget.chatDataList.length,
-      itemBuilder: (BuildContext context, int index) {
-        return GestureDetector(
-          child: Container(
-            color: index == _selectedIndex
-                ? AppColors.elementsColor
-                : AppColors.darkThemeColor,
-            child: ChatListItem(
-              linkUrl: widget.chatDataList[index].linkUrl,
-              title: widget.chatDataList[index].title,
-              subtitle: widget.chatDataList[index].subtitle,
-              time: widget.chatDataList[index].time,
-              messages: widget.chatDataList[index].unreadMessages,
-            ),
+    return AnimatedList(
+      key: _key,
+      padding: const EdgeInsets.all(8),
+      initialItemCount: _listItems.length,
+      itemBuilder:
+          (BuildContext context, int index, Animation<double> animation) {
+        return SlideTransition(
+          position: CurvedAnimation(
+            curve: Curves.easeOut,
+            parent: animation,
+          ).drive(
+            (Tween<Offset>(
+              begin: const Offset(1, 0),
+              end: const Offset(0, 0),
+            )),
           ),
-          onTap: () {
-            setState(
-              () {
-                _selectedIndex = index;
-              },
-            );
-            Modular.to.pushNamed('/${widget.path}/${widget.chatDataList[index].id}');
-            /*SplitView.of(context).popUntil(0);
-            SplitView.of(context).push(
-              DetailsScreen(
-                  chatElement: widget.chatDataList[selectedIndex]),
-            );*/
-          },
+          child: ChatListItem(
+            element: _listItems[index],
+            path: widget.path,
+          ),
         );
       },
-      separatorBuilder: (BuildContext context, int index) => Divider(
-        thickness: 1,
-        height: 0,
-        color: AppColors.secondaryColor,
-      ),
     );
   }
 }
