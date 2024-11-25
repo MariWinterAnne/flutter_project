@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../theme/custom_theme.dart';
-import '../settings/presentation/state/cubits/app_theme_cubit.dart';
-import 'widgets/checkbox.dart';
+import '../../../../theme/custom_theme.dart';
+import '../state/cubits/app_theme_cubit.dart';
 
-class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+class SettingsScreen extends StatelessWidget {
+  const SettingsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,12 +16,20 @@ class ProfileScreen extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text(
-            'Profile',
+            'Settings',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
-        body: //const ListDropdown(),
-            const CheckBoxScreen(),
+        body: Center(
+          child: IconButton(
+            icon: state.isDark == true
+                ? const Icon(Icons.light_mode_outlined)
+                : const Icon(Icons.mode_night_outlined),
+            onPressed: () {
+              context.read<AppThemeCubit>().updateAppTheme(!state.isDark);
+            },
+          ),
+        ),
       ),
     );
   }

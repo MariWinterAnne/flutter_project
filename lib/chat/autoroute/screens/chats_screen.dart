@@ -4,7 +4,7 @@ import '../../modular/features/chat/domain/models/chat_data.dart';
 import '../../modular/features/chat/presentation/widgets/avatars/avatar_icon_stack.dart';
 import '../../modular/features/chat/presentation/widgets/search_bar.dart';
 import '../../modular/features/chat/presentation/widgets/tabbar/chats_list.dart';
-import '../../theme/colors.dart';
+import '../../modular/theme/colors.dart';
 
 @RoutePage()
 class ChatsScreen extends StatelessWidget {
