@@ -6,6 +6,7 @@ import '../state/app_theme_mode_state.dart';
 import '../state/cubits/app_theme_cubit.dart';
 import '../state/cubits/chat_details_cubit.dart';
 import '../state/details_screen_state.dart';
+import '../widgets/animated_back_icon.dart';
 import '../widgets/details/details_screen_card.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -26,7 +27,7 @@ class DetailsScreen extends StatelessWidget {
             appBar: AppBar(
               leading: IconButton(
                 onPressed: () => Navigator.pop(context, false),
-                icon: const Icon(Icons.arrow_back),
+                icon: const AnimatedBackIcon(),
               ),
               title: BlocBuilder<ChatDetailsCubit, DetailsScreenState>(
                 builder: (context, state) {
@@ -79,6 +80,7 @@ class DetailsScreen extends StatelessWidget {
             body: BlocBuilder<ChatDetailsCubit, DetailsScreenState>(
               builder: (context, state) {
                 return SingleChildScrollView(
+                  padding: const EdgeInsets.only(left: 8),
                   child: CardView(element: state.currentChat),
                 );
               },
