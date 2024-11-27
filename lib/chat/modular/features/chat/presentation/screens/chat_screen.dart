@@ -81,26 +81,33 @@ class _ChatsScreen extends State<ChatsScreen> with TickerProviderStateMixin {
                           SizedBox(
                             child: BlocBuilder<ChatsCubit, ChatScreenState>(
                               builder: (context, state) {
-                                return TabBar(
-                                  controller: _controller,
-                                  isScrollable: true,
-                                  tabs: [
-                                    for (int i = 0;
-                                        i < state.chatData.titles.length;
-                                        i++)
-                                      SizedBox(
-                                        child: Tab(
-                                          height: 20,
-                                          child: Text(
-                                            state.chatData.titles[i],
-                                            style:
-                                                const TextStyle(fontSize: 12),
+                                switch (state.loading) {
+                                  case ContentState.loading:
+                                    return const SizedBox();
+                                  case ContentState.success:
+                                    return TabBar(
+                                      controller: _controller,
+                                      isScrollable: true,
+                                      tabs: [
+                                        for (int i = 0;
+                                            i < state.chatData.titles.length;
+                                            i++)
+                                          SizedBox(
+                                            child: Tab(
+                                              height: 20,
+                                              child: Text(
+                                                state.chatData.titles[i],
+                                                style: const TextStyle(
+                                                    fontSize: 12),
+                                              ),
+                                            ),
                                           ),
-                                        ),
-                                      ),
-                                  ],
-                                  textScaler: TextScaler.noScaling,
-                                );
+                                      ],
+                                      textScaler: TextScaler.noScaling,
+                                    );
+                                  case ContentState.error:
+                                    return const SizedBox();
+                                }
                               },
                             ),
                           ),
@@ -150,27 +157,40 @@ class _ChatsScreen extends State<ChatsScreen> with TickerProviderStateMixin {
               },
               body: BlocBuilder<ChatsCubit, ChatScreenState>(
                 builder: (context, state) {
-                  return TabBarView(
-                    controller: _controller,
-                    children: [
-                      ChatsListView(
-                        path: path,
-                        chatDataList: state.chatData.chatDataList,
-                      ),
-                      ChatsListView(
-                        path: path,
-                        chatDataList: state.chatData.chatDataList
-                            .where((element) => element.type == 'Personal')
-                            .toList(),
-                      ),
-                      ChatsListView(
-                        path: path,
-                        chatDataList: state.chatData.chatDataList
-                            .where((element) => element.type == 'Others')
-                            .toList(),
-                      ),
-                    ],
-                  );
+                  switch (state.loading) {
+                    case ContentState.loading:
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    case ContentState.success:
+                      return TabBarView(
+                        controller: _controller,
+                        children: [
+                          ChatsListView(
+                            path: path,
+                            chatDataList: state.chatData.chatDataList,
+                          ),
+                          ChatsListView(
+                            path: path,
+                            chatDataList: state.chatData.chatDataList
+                                .where((element) =>
+                                    element.type?.first.name == 'cartoons')
+                                .toList(),
+                          ),
+                          ChatsListView(
+                            path: path,
+                            chatDataList: state.chatData.chatDataList
+                                .where((element) =>
+                                    element.type?.first.name == 'comedy')
+                                .toList(),
+                          ),
+                        ],
+                      );
+                    case ContentState.error:
+                      return const Center(
+                        child: Text('Произошла ошибка при загрузке данных.'),
+                      );
+                  }
                 },
               ),
             ),
