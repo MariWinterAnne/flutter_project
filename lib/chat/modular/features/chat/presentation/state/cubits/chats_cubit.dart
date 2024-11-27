@@ -14,7 +14,14 @@ class ChatsCubit extends Cubit<ChatScreenState> {
     emit(state.copyWith(chatData: state.chatData));
   }
 
-  _getData() {
-    emit(state.copyWith(chatData: repository.getData()));
+  _getData() async {
+    final result = await repository.getData();
+    emit(
+      state.copyWith(
+        loading: ContentState.success,
+        chatData: result,
+        error: ContentState.error,
+      ),
+    );
   }
 }

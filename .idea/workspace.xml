@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34ac4c8e-69e7-4a8e-b1d7-f6f313ae66f6" name="Changes" comment="Refactoring.">
+    <list default="true" id="34ac4c8e-69e7-4a8e-b1d7-f6f313ae66f6" name="Changes" comment="Refactoring."/>
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
+    <list default="true" id="34ac4c8e-69e7-4a8e-b1d7-f6f313ae66f6" name="Changes" comment="JSON parsing.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/calls/calls_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/calls/calls_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/screens/chat_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/screens/chat_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/screens/details_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/screens/details_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/profile/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/profile/profile_screen.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/screens/settings_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/screens/settings_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/screens/chat_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/screens/chat_screen.dart" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +31,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/clean_architecture" />
+        <entry key="$PROJECT_DIR$" value="feature/theme_changing" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,39 +49,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "feature/theme__changing",
-    "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "/Users/user/StudioProjects/flutter_project/lib/chat/modular/features/settings",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "terminal",
-    "show.migrate.to.gradle.popup": "false"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/network&quot;,
+    &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/user/StudioProjects/flutter_project/lib/chat/modular/features/chat/domain/models&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
-}]]></component>
+}]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/domain/models" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/data/models" />
       <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings" />
       <recent name="$PROJECT_DIR$/lib/chat/modular/features/calls" />
       <recent name="$PROJECT_DIR$/lib/chat/modular/features/profile" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/data/models" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/chat/modular" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/data/repository" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/state" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/state" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/state/cubits" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/screens" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings/domain" />
     </key>
   </component>
   <component name="RunManager">
@@ -313,7 +315,31 @@
       <option name="project" value="LOCAL" />
       <updated>1732210065048</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Theme changing.">
+      <option name="closed" value="true" />
+      <created>1732524637044</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1732524637044</updated>
+    </task>
+    <task id="LOCAL-00029" summary="JSON parsing.">
+      <option name="closed" value="true" />
+      <created>1732723961992</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1732723961992</updated>
+    </task>
+    <task id="LOCAL-00030" summary="JSON parsing.">
+      <option name="closed" value="true" />
+      <created>1732783702352</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1732783702352</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -334,6 +360,8 @@
     <MESSAGE value="Themes." />
     <MESSAGE value="Clean architecture." />
     <MESSAGE value="Refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring." />
+    <MESSAGE value="Theme changing." />
+    <MESSAGE value="JSON parsing." />
+    <option name="LAST_COMMIT_MESSAGE" value="JSON parsing." />
   </component>
 </project>
