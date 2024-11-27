@@ -160,13 +160,13 @@ class _ChatsScreen extends State<ChatsScreen> with TickerProviderStateMixin {
                       ChatsListView(
                         path: path,
                         chatDataList: state.chatData.chatDataList
-                            .where((element) => element.type == 'Personal')
+                            .where((element) => element.type?.first.name == 'cartoons')
                             .toList(),
                       ),
                       ChatsListView(
                         path: path,
                         chatDataList: state.chatData.chatDataList
-                            .where((element) => element.type == 'Others')
+                            .where((element) => element.type?.first.name == 'comedy')
                             .toList(),
                       ),
                     ],

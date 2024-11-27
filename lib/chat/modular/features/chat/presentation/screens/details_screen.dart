@@ -1,5 +1,6 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:html/parser.dart';
 import '../../../../../theme/colors.dart';
 import '../../../../../theme/custom_theme.dart';
 import '../state/app_theme_mode_state.dart';
@@ -35,24 +36,32 @@ class DetailsScreen extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         radius: 16,
-                        backgroundImage: AssetImage(state.currentChat.linkUrl),
+                        backgroundImage:
+                            NetworkImage(state.currentChat.linkUrl.image ?? ''),
                       ),
                       const SizedBox(width: 8),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(state.currentChat.title),
-                          Text(
-                            state.currentChat.subtitle,
-                            style:
-                                Theme.of(context).textTheme.bodySmall?.copyWith(
-                                      color: AppColors.greyColor,
-                                    ),
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                          ),
-                        ],
+                      Flexible(
+                        fit: FlexFit.tight,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(state.currentChat.title),
+                            Text(
+                              parse(state.currentChat.subtitle)
+                                      .documentElement
+                                      ?.text ??
+                                  '',
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall
+                                  ?.copyWith(
+                                    color: AppColors.greyColor,
+                                  ),
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   );

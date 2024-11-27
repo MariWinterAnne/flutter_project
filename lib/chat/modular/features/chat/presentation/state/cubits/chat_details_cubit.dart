@@ -7,9 +7,13 @@ class ChatDetailsCubit extends Cubit<DetailsScreenState> {
 
   ChatDetailsCubit({required this.repository, required int chatId})
       : super(
-          DetailsScreenState.initial(repository
-              .getData()
-              .chatDataList
-              .firstWhere((chat) => chat.id == chatId)),
-        );
+          DetailsScreenState.initial(),
+        ) {
+    _getData(chatId);
+  }
+
+  _getData(int chatId) async {
+    final result = await repository.getData();
+    emit(state.copyWith(currentChat: result.chatDataList.firstWhere((chat) => chat.id == chatId)));
+  }
 }

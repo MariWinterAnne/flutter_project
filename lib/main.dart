@@ -5,7 +5,7 @@ import 'chat/theme/colors.dart';
 
 final appTheme = ThemeData(scaffoldBackgroundColor: AppColors.darkPrimaryColor);
 
-void main() {
+void main() async {
   //runApp(const AutoRouteEntryWidget());
   runApp(const ModularEntryWidget());
 }

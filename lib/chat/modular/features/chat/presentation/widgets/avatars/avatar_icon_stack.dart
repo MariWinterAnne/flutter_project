@@ -33,7 +33,7 @@ class _AvatarIconStackState extends State<AvatarIconStack> {
                 return Padding(
                   padding: EdgeInsets.only(right: index.toDouble() * offset),
                   child:
-                      AvatarIcon(iconLink: widget.chatDataList[index].linkUrl),
+                      AvatarIcon(iconLink: widget.chatDataList[index].linkUrl.image ?? ''),
                 );
               },
             ),

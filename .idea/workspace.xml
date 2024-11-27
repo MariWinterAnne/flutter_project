@@ -4,11 +4,37 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34ac4c8e-69e7-4a8e-b1d7-f6f313ae66f6" name="Changes" comment="Refactoring.">
+    <list default="true" id="34ac4c8e-69e7-4a8e-b1d7-f6f313ae66f6" name="Changes" comment="Theme changing.">
+      <change afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/data/models/images_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/data/models/poster_model.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/domain/models/images.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/domain/models/poster.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/chat/modular/utils/date_time_extensions.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/chat/network/api_client.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/chat/network/request.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/autoroute/screens/details_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/autoroute/screens/details_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/data/mappers/chat_data_mapper.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/data/mappers/chat_data_mapper.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/data/models/chat_data_list_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/data/models/chat_data_list_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/data/models/chat_data_model.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/data/models/chat_data_model.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/data/repository/chat_repository_impl.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/data/repository/chat_repository_impl.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/domain/models/chat_data_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/domain/models/chat_data_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/domain/repository/chat_repository.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/domain/repository/chat_repository.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/screens/chat_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/screens/chat_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/screens/details_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/screens/details_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/state/cubits/chat_details_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/state/cubits/chat_details_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/state/cubits/chats_cubit.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/state/cubits/chats_cubit.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/state/details_screen_state.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/state/details_screen_state.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/widgets/animated_avatar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/widgets/animated_avatar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/widgets/avatars/avatar_icon.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/widgets/avatars/avatar_icon.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/widgets/avatars/avatar_icon_stack.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/widgets/avatars/avatar_icon_stack.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/widgets/details/details_screen_card.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/widgets/details/details_screen_card.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/widgets/list_item.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/widgets/list_item.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/main.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
@@ -28,7 +54,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/clean_architecture" />
+        <entry key="$PROJECT_DIR$" value="feature/theme_changing" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -55,30 +81,30 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;com.google.services.firebase.aqiPopupShown&quot;: &quot;true&quot;,
     &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;feature/refactoring&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/network&quot;,
     &quot;io.flutter.reload.alreadyRun&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/user/StudioProjects/flutter_project/lib/chat/modular/features/settings&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/user/StudioProjects/flutter_project/lib/chat/modular/features/chat/domain/models&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;terminal&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/domain/models" />
       <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings" />
       <recent name="$PROJECT_DIR$/lib/chat/modular/features/calls" />
       <recent name="$PROJECT_DIR$/lib/chat/modular/features/profile" />
       <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/data/models" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/chat/modular" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/data/repository" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/state" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/state" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/state/cubits" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/screens" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings/domain" />
     </key>
   </component>
   <component name="RunManager">
@@ -312,7 +338,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732210065048</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Theme changing.">
+      <option name="closed" value="true" />
+      <created>1732524637044</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1732524637044</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -333,6 +367,7 @@
     <MESSAGE value="Themes." />
     <MESSAGE value="Clean architecture." />
     <MESSAGE value="Refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring." />
+    <MESSAGE value="Theme changing." />
+    <option name="LAST_COMMIT_MESSAGE" value="Theme changing." />
   </component>
 </project>
