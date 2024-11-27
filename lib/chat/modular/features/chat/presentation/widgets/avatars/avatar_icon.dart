@@ -14,7 +14,7 @@ class _AvatarIconState extends State<AvatarIcon> {
   Widget build(BuildContext context) {
     return CircleAvatar(
       radius: 10,
-      backgroundImage: AssetImage(widget.iconLink),
+      backgroundImage: NetworkImage(widget.iconLink),
     );
   }
 }
