@@ -1,23 +1,35 @@
+import 'images.dart';
+import 'poster.dart';
+import 'genre.dart';
+
 class ChatDataList {
   const ChatDataList({
-    required this.id,
+    this.id = 0,
     required this.linkUrl,
-    required this.title,
-    required this.subtitle,
-    required this.time,
-    required this.unreadMessages,
-    required this.text,
-    required this.cardImageLink,
-    required this.type,
+    this.title = '',
+    this.subtitle = '',
+    this.time = 0,
+    this.unreadMessages,
+    this.text = '',
+    this.cardImageLink,
+    this.type,
+    this.stars,
+    this.awards,
+    this.rating,
+    this.language,
   });
 
   final int id;
-  final String linkUrl;
+  final Poster linkUrl;
   final String title;
   final String subtitle;
-  final String time;
-  final String? unreadMessages;
+  final int time;
+  final int? unreadMessages;
   final String text;
-  final String? cardImageLink;
-  final String type;
+  final List<Images>? cardImageLink;
+  final List<Genre>? type;
+  final String? stars;
+  final String? awards;
+  final double? rating;
+  final String? language;
 }
