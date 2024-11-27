@@ -35,108 +35,140 @@ class _ChatsScreen extends State<ChatsScreen> with TickerProviderStateMixin {
     final screenWidth = MediaQuery.of(context).size.width;
     final path = screenWidth > 600 ? 'details' : 'chatDetails';
     return Scaffold(
-      body: NestedScrollView(
-        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-          return [
-            SliverAppBar(
-              title: BlocBuilder<ChatsCubit, ChatScreenState>(
-                builder: (context, state) {
-                  return AvatarIconStack(
-                    chatDataList: state.chatData.chatDataList.isNotEmpty
-                        ? state.chatData.chatDataList.take(3).toList()
-                        : [],
-                  );
-                },
-              ),
-              bottom: PreferredSize(
-                preferredSize: const Size.fromHeight(70.0),
-                child: Column(children: [
-                  SizedBox(
-                    height: 40,
-                    child: Container(
-                      margin: const EdgeInsets.only(
-                        right: 8,
-                        left: 8,
-                        bottom: 8,
-                      ),
-                      child: const SearchBarApp(),
-                    ),
-                  ),
-                  SizedBox(
-                    child: BlocBuilder<ChatsCubit, ChatScreenState>(
-                      builder: (context, state) {
-                        return TabBar(
-                          controller: _controller,
-                          isScrollable: true,
-                          tabs: [
-                            for (int i = 0;
-                                i < state.chatData.titles.length;
-                                i++)
-                              SizedBox(
-                                child: Tab(
-                                  height: 20,
-                                  child: Text(
-                                    state.chatData.titles[i],
-                                    style: const TextStyle(fontSize: 12),
-                                  ),
-                                ),
-                              ),
-                          ],
-                          textScaler: TextScaler.noScaling,
-                        );
-                      },
-                    ),
-                  ),
-                  Container(
-                    color: Theme.of(context).cardTheme.color,
-                    alignment: Alignment.center,
-                    width: MediaQuery.of(context).size.width,
-                    height: 20,
-                    child: Text(
-                      archivedChats,
-                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                            color: AppColors.greyColor,
+        body: NestedScrollView(
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+            return [
+              SliverAppBar(
+                title: BlocBuilder<ChatsCubit, ChatScreenState>(
+                  builder: (context, state) {
+                    return AvatarIconStack(
+                      chatDataList: state.chatData.chatDataList.isNotEmpty
+                          ? state.chatData.chatDataList.take(3).toList()
+                          : [],
+                    );
+                  },
+                ),
+                bottom: PreferredSize(
+                  preferredSize: const Size.fromHeight(70.0),
+                  child: Column(
+                    children: [
+                      SizedBox(
+                        height: 40,
+                        child: Container(
+                          margin: const EdgeInsets.only(
+                            right: 8,
+                            left: 8,
+                            bottom: 8,
                           ),
+                          child: const SearchBarApp(),
+                        ),
+                      ),
+                      SizedBox(
+                        child: BlocBuilder<ChatsCubit, ChatScreenState>(
+                          builder: (context, state) {
+                            switch (state.loading) {
+                              case ContentState.loading:
+                                return const SizedBox();
+                              case ContentState.success:
+                                return TabBar(
+                                  controller: _controller,
+                                  isScrollable: true,
+                                  tabs: [
+                                    for (int i = 0;
+                                        i < state.chatData.titles.length;
+                                        i++)
+                                      SizedBox(
+                                        child: Tab(
+                                          height: 20,
+                                          child: Text(
+                                            state.chatData.titles[i],
+                                            style:
+                                                const TextStyle(fontSize: 12),
+                                          ),
+                                        ),
+                                      ),
+                                  ],
+                                  textScaler: TextScaler.noScaling,
+                                );
+                              case ContentState.error:
+                                return const SizedBox();
+                            }
+                          },
+                        ),
+                      ),
+                      Container(
+                        color: Theme.of(context).cardTheme.color,
+                        alignment: Alignment.center,
+                        width: MediaQuery.of(context).size.width,
+                        height: 20,
+                        child: Text(
+                          archivedChats,
+                          style:
+                              Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    color: AppColors.greyColor,
+                                  ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                actions: [
+                  Container(
+                    margin: const EdgeInsets.only(right: 8),
+                    child: IconButton(
+                      icon: const Icon(Icons.edit_note),
+                      onPressed: () {},
                     ),
                   ),
-                ]),
+                ],
               ),
-              actions: [
-                Container(
-                  margin: const EdgeInsets.only(right: 8),
-                  child: IconButton(
-                    icon: const Icon(Icons.edit_note),
-                    onPressed: () {},
-                  ),
-                ),
-              ],
-            ),
-          ];
-        },
-        body: BlocBuilder<ChatsCubit, ChatScreenState>(
-          builder: (context, state) {
-            return TabBarView(
-              controller: _controller,
-              children: [
-                ChatsListView(
-                  path: path,
-                  chatDataList: state.chatData.chatDataList,
-                ),
-                ChatsListView(
-                  path: path,
-                  chatDataList: state.chatData.chatDataList
-                      .where((element) => element.type == 'Personal')
-                      .toList(),
-                ),
-                ChatsListView(
-                  path: path,
-                  chatDataList: state.chatData.chatDataList
-                      .where((element) => element.type == 'Others')
-                      .toList(),
-                ),
-              ],
-            );
+            ];
           },
+          body: BlocBuilder<ChatsCubit, ChatScreenState>(
+            builder: (context, state) {
+              switch (state.loading) {
+                case ContentState.loading:
+                  return const Center(
+                    child: CircularProgressIndicator(),
+                  );
+                case ContentState.success:
+                  return TabBarView(
+                    controller: _controller,
+                    children: [
+                      ChatsListView(
+                        path: path,
+                        chatDataList: state.chatData.chatDataList,
+                      ),
+                      ChatsListView(
+                        path: path,
+                        chatDataList: state.chatData.chatDataList
+                            .where(
+                              (element) =>
+                                  element.type
+                                      ?.any((el) => el.name == 'cartoons') ??
+                                  false,
+                            )
+                            .toList(),
+                      ),
+                      ChatsListView(
+                        path: path,
+                        chatDataList: state.chatData.chatDataList
+                            .where(
+                              (element) =>
+                                  element.type
+                                      ?.any((el) => el.name == 'comedy') ??
+                                  false,
+                            )
+                            .toList(),
+                      ),
+                    ],
+                  );
+                case ContentState.error:
+                  return const Center(
+                    child: Text('Произошла ошибка при загрузке данных.'),
+                  );
+              }
+            },
         ),
       ),
     );

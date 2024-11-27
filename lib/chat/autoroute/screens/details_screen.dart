@@ -31,7 +31,7 @@ class _DetailsScreenViewState extends State<DetailsScreen> {
           children: [
             CircleAvatar(
               radius: 16,
-              backgroundImage: AssetImage(widget.chatElement.linkUrl),
+              backgroundImage: AssetImage(widget.chatElement.linkUrl.image ?? ''),
             ),
             const SizedBox(width: 8),
             Column(
