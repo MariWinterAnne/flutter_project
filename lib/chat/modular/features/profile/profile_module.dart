@@ -1,8 +1,7 @@
-import 'package:animations/animations.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import '../chat/data/repository/chat_repository_impl.dart';
+import '../chat/domain/usecase/get_data_usecase.dart';
 import '../settings/data/theme_repository_impl.dart';
 import '../chat/presentation/screens/details_screen.dart';
 import '../chat/presentation/screens/root_view_screen.dart';
@@ -13,7 +12,7 @@ import '../chat/presentation/state/cubits/chats_cubit.dart';
 class ProfileModule extends Module {
   @override
   void binds(i) {
-    i.addSingleton(ChatRepositoryImpl.new);
+    i.addSingleton(GetDataUseCase.new);
     i.addSingleton(ThemeRepositoryImpl.new);
   }
 
@@ -25,7 +24,7 @@ class ProfileModule extends Module {
         providers: [
           BlocProvider(
             create: (_) => ChatsCubit(
-              repository: Modular.get<ChatRepositoryImpl>(),
+              getDataUseCase: Modular.get<GetDataUseCase>(),
             ),
           ),
           BlocProvider(
@@ -41,7 +40,7 @@ class ProfileModule extends Module {
           '/details/:chatId',
           child: (context) => BlocProvider(
             create: (_) => ChatDetailsCubit(
-              repository: Modular.get<ChatRepositoryImpl>(),
+              getDataUseCase: Modular.get<GetDataUseCase>(),
               chatId: int.parse(
                 r.args.params['chatId'],
               ),
@@ -64,7 +63,7 @@ class ProfileModule extends Module {
         providers: [
           BlocProvider(
             create: (_) => ChatDetailsCubit(
-              repository: Modular.get<ChatRepositoryImpl>(),
+              getDataUseCase: Modular.get<GetDataUseCase>(),
               chatId: int.parse(r.args.params['chatId']),
             ),
           ),
