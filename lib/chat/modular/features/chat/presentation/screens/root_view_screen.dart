@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import '../../../../../theme/colors.dart';
+import '../../../../theme/colors.dart';
 import '../../../bottom_bar_navigation.dart';
-import '../state/app_theme_mode_state.dart';
-import '../state/cubits/app_theme_cubit.dart';
+import '../../../settings/presentation/state/app_theme_mode_state.dart';
+import '../../../settings/presentation/state/cubits/app_theme_cubit.dart';
 
 class RootViewScreen extends StatefulWidget {
   const RootViewScreen({super.key});
