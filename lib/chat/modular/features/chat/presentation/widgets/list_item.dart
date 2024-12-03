@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:html/parser.dart';
 import '../../../../theme/colors.dart';
+import '../../../../utils/date_time_extensions.dart';
+import '../../../../utils/string_extensions.dart';
 import '../../domain/models/chat_data_list.dart';
 
 class ChatListItem extends StatefulWidget {
@@ -25,30 +28,30 @@ class _ChatListItemState extends State<ChatListItem> {
         width: 40,
         height: 40,
         child: CircleAvatar(
-          backgroundImage: AssetImage(widget.element.linkUrl),
+          backgroundImage: NetworkImage(widget.element.linkUrl.image ?? empty()),
         ),
       ),
       title: Text(widget.element.title),
-      subtitle: Text(widget.element.subtitle),
+      subtitle: Text(parse(widget.element.subtitle).documentElement?.text ?? empty()),
       trailing: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
           Text(
-            widget.element.time,
+            getDateTime(widget.element.time),
             style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   fontSize: 8,
                   color: AppColors.greyColor,
                 ),
           ),
-          if (widget.element.unreadMessages != null)
+          if (widget.element.unreadMessages != 0)
             CircleAvatar(
               backgroundColor: AppColors.greyColor.withAlpha(70),
               radius: 10,
               child: FittedBox(
                 fit: BoxFit.fill,
                 child: Text(
-                  widget.element.unreadMessages as String,
+                  widget.element.unreadMessages.toString(),
                   style: Theme.of(context)
                       .textTheme
                       .bodySmall
