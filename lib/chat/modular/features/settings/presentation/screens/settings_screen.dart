@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../theme/custom_theme.dart';
 import '../state/cubits/app_theme_cubit.dart';
+import 'webview.dart';
 
 class SettingsScreen extends StatelessWidget {
   const SettingsScreen({super.key});
@@ -19,17 +20,18 @@ class SettingsScreen extends StatelessWidget {
             'Settings',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
+          actions: [
+            IconButton(
+              icon: state.isDark == true
+                  ? const Icon(Icons.light_mode_outlined)
+                  : const Icon(Icons.mode_night_outlined),
+              onPressed: () {
+                context.read<AppThemeCubit>().updateAppTheme(!state.isDark);
+              },
+            ),
+          ],
         ),
-        body: Center(
-          child: IconButton(
-            icon: state.isDark == true
-                ? const Icon(Icons.light_mode_outlined)
-                : const Icon(Icons.mode_night_outlined),
-            onPressed: () {
-              context.read<AppThemeCubit>().updateAppTheme(!state.isDark);
-            },
-          ),
-        ),
+        body: const WebViewApp(),//const WebViewExample(),
       ),
     );
   }

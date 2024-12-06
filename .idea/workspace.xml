@@ -5,13 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34ac4c8e-69e7-4a8e-b1d7-f6f313ae66f6" name="Changes" comment="Refactoring.">
+      <change afterPath="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/screens/webview.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/widgets/webview_menu.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/widgets/webview_navigation_control.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/calls/calls_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/calls/calls_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/screens/chat_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/screens/chat_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/screens/details_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/screens/details_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/profile/profile_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/profile/profile_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/screens/settings_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/screens/settings_screen.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,7 +58,7 @@
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "feature/theme__changing",
+    "git-widget-placeholder": "webview",
     "io.flutter.reload.alreadyRun": "true",
     "last_opened_file_path": "/Users/user/StudioProjects/flutter_project/lib/chat/modular/features/settings",
     "project.structure.last.edited": "Modules",
