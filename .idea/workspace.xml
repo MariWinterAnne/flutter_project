@@ -24,18 +24,7 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="Git.Settings">
-    <option name="PREVIOUS_COMMIT_AUTHORS">
-      <list>
-        <option value="MariWinterAnne &lt;104363300+mariwinteranne@users.noreply.github.com&gt;" />
-      </list>
-    </option>
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="feature/clean_architecture" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -56,32 +45,27 @@
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "webview",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "/Users/user/StudioProjects/flutter_project/lib/chat/modular/features/settings",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "terminal",
+    "last_opened_file_path": "/Users/user/StudioProjects/flutter_project/lib/chat/modular/features/chat/presentation/state/cubits",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/calls" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/profile" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/state/cubits" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/state" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/domain/models" />
       <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/data/models" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/data" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/lib/chat/modular" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/data/repository" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/state" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/state" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/state/cubits" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/screens" />
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings/domain" />
     </key>
   </component>
   <component name="RunManager">
@@ -93,7 +77,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="34ac4c8e-69e7-4a8e-b1d7-f6f313ae66f6" name="Changes" comment="" />
+      <changelist id="beaf55c7-ba98-4c22-b81a-8c3200278674" name="Changes" comment="JSON parsing." />
       <created>1730795729214</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -315,7 +299,39 @@
       <option name="project" value="LOCAL" />
       <updated>1732210065048</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Theme changing.">
+      <option name="closed" value="true" />
+      <created>1732524637044</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1732524637044</updated>
+    </task>
+    <task id="LOCAL-00029" summary="JSON parsing.">
+      <option name="closed" value="true" />
+      <created>1732723961992</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1732723961992</updated>
+    </task>
+    <task id="LOCAL-00030" summary="JSON parsing.">
+      <option name="closed" value="true" />
+      <created>1732783702352</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1732783702352</updated>
+    </task>
+    <task id="LOCAL-00031" summary="JSON parsing.">
+      <option name="closed" value="true" />
+      <created>1733241042016</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1733241042016</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -336,6 +352,8 @@
     <MESSAGE value="Themes." />
     <MESSAGE value="Clean architecture." />
     <MESSAGE value="Refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring." />
+    <MESSAGE value="Theme changing." />
+    <MESSAGE value="JSON parsing." />
+    <option name="LAST_COMMIT_MESSAGE" value="JSON parsing." />
   </component>
 </project>
