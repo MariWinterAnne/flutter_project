@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../theme/colors.dart';
-import '../../../../theme/custom_theme.dart';
 import '../state/chat_screen_state.dart';
-import '../../../settings/presentation/state/cubits/app_theme_cubit.dart';
 import '../state/cubits/chats_cubit.dart';
 import '../widgets/avatars/avatar_icon_stack.dart';
 import '../widgets/search_bar.dart';
@@ -35,116 +33,110 @@ class _ChatsScreen extends State<ChatsScreen> with TickerProviderStateMixin {
   Widget build(BuildContext context) {
     const archivedChats = 'Archived chats';
     final screenWidth = MediaQuery.of(context).size.width;
-    final state = context.watch<AppThemeCubit>().state;
     final path = screenWidth > 600 ? 'details' : 'chatDetails';
-    return MaterialApp(
-      themeMode: state.isDark == true ? ThemeMode.dark : ThemeMode.light,
-      darkTheme: CustomTheme.darkTheme,
-      theme: CustomTheme.lightTheme,
-      home: Scaffold(
-        body: NestedScrollView(
-          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
-            return [
-              SliverAppBar(
-                title: BlocBuilder<ChatsCubit, ChatScreenState>(
-                  builder: (context, state) {
-                    return AvatarIconStack(
-                      chatDataList: state.chatData.chatDataList.isNotEmpty
-                          ? state.chatData.chatDataList.take(3).toList()
-                          : [],
-                    );
-                  },
-                ),
-                bottom: PreferredSize(
-                  preferredSize: const Size.fromHeight(70.0),
-                  child: Column(children: [
-                    SizedBox(
-                      height: 40,
-                      child: Container(
-                        margin: const EdgeInsets.only(
-                          right: 8,
-                          left: 8,
-                          bottom: 8,
-                        ),
-                        child: const SearchBarApp(),
+    return Scaffold(
+      body: NestedScrollView(
+        headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
+          return [
+            SliverAppBar(
+              title: BlocBuilder<ChatsCubit, ChatScreenState>(
+                builder: (context, state) {
+                  return AvatarIconStack(
+                    chatDataList: state.chatData.chatDataList.isNotEmpty
+                        ? state.chatData.chatDataList.take(3).toList()
+                        : [],
+                  );
+                },
+              ),
+              bottom: PreferredSize(
+                preferredSize: const Size.fromHeight(70.0),
+                child: Column(children: [
+                  SizedBox(
+                    height: 40,
+                    child: Container(
+                      margin: const EdgeInsets.only(
+                        right: 8,
+                        left: 8,
+                        bottom: 8,
                       ),
+                      child: const SearchBarApp(),
                     ),
-                    SizedBox(
-                      child: BlocBuilder<ChatsCubit, ChatScreenState>(
-                        builder: (context, state) {
-                          return TabBar(
-                            controller: _controller,
-                            isScrollable: true,
-                            tabs: [
-                              for (int i = 0;
-                                  i < state.chatData.titles.length;
-                                  i++)
-                                SizedBox(
-                                  child: Tab(
-                                    height: 20,
-                                    child: Text(
-                                      state.chatData.titles[i],
-                                      style: const TextStyle(fontSize: 12),
-                                    ),
+                  ),
+                  SizedBox(
+                    child: BlocBuilder<ChatsCubit, ChatScreenState>(
+                      builder: (context, state) {
+                        return TabBar(
+                          controller: _controller,
+                          isScrollable: true,
+                          tabs: [
+                            for (int i = 0;
+                                i < state.chatData.titles.length;
+                                i++)
+                              SizedBox(
+                                child: Tab(
+                                  height: 20,
+                                  child: Text(
+                                    state.chatData.titles[i],
+                                    style: const TextStyle(fontSize: 12),
                                   ),
                                 ),
-                            ],
-                            textScaler: TextScaler.noScaling,
-                          );
-                        },
-                      ),
+                              ),
+                          ],
+                          textScaler: TextScaler.noScaling,
+                        );
+                      },
                     ),
-                    Container(
-                      color: Theme.of(context).cardTheme.color,
-                      alignment: Alignment.center,
-                      width: MediaQuery.of(context).size.width,
-                      height: 20,
-                      child: Text(
-                        archivedChats,
-                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: AppColors.greyColor,
-                            ),
-                      ),
-                    ),
-                  ]),
-                ),
-                actions: [
+                  ),
                   Container(
-                    margin: const EdgeInsets.only(right: 8),
-                    child: IconButton(
-                      icon: const Icon(Icons.edit_note),
-                      onPressed: () {},
+                    color: Theme.of(context).cardTheme.color,
+                    alignment: Alignment.center,
+                    width: MediaQuery.of(context).size.width,
+                    height: 20,
+                    child: Text(
+                      archivedChats,
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                            color: AppColors.greyColor,
+                          ),
                     ),
                   ),
-                ],
+                ]),
               ),
-            ];
+              actions: [
+                Container(
+                  margin: const EdgeInsets.only(right: 8),
+                  child: IconButton(
+                    icon: const Icon(Icons.edit_note),
+                    onPressed: () {},
+                  ),
+                ),
+              ],
+            ),
+          ];
+        },
+        body: BlocBuilder<ChatsCubit, ChatScreenState>(
+          builder: (context, state) {
+            return TabBarView(
+              controller: _controller,
+              children: [
+                ChatsListView(
+                  path: path,
+                  chatDataList: state.chatData.chatDataList,
+                ),
+                ChatsListView(
+                  path: path,
+                  chatDataList: state.chatData.chatDataList
+                      .where((element) => element.type == 'Personal')
+                      .toList(),
+                ),
+                ChatsListView(
+                  path: path,
+                  chatDataList: state.chatData.chatDataList
+                      .where((element) => element.type == 'Others')
+                      .toList(),
+                ),
+              ],
+            );
           },
-          body: BlocBuilder<ChatsCubit, ChatScreenState>(
-            builder: (context, state) {
-              return TabBarView(
-                controller: _controller,
-                children: [
-                  ChatsListView(
-                    path: path,
-                    chatDataList: state.chatData.chatDataList,
-                  ),
-                  ChatsListView(
-                    path: path,
-                    chatDataList: state.chatData.chatDataList
-                        .where((element) => element.type == 'Personal')
-                        .toList(),
-                  ),
-                  ChatsListView(
-                    path: path,
-                    chatDataList: state.chatData.chatDataList
-                        .where((element) => element.type == 'Others')
-                        .toList(),
-                  ),
-                ],
-              );
-            },
-          ),
         ),
       ),
     );

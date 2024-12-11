@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34ac4c8e-69e7-4a8e-b1d7-f6f313ae66f6" name="Changes" comment="Refactoring.">
-      <change afterPath="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/screens/webview.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/widgets/webview_menu.dart" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/widgets/webview_navigation_control.dart" afterDir="false" />
+    <list default="true" id="34ac4c8e-69e7-4a8e-b1d7-f6f313ae66f6" name="Changes" comment="Splash screen.">
       <change beforePath="$PROJECT_DIR$/.dart_tool/package_config.json" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.dart_tool/package_config_subset" beforeDir="false" afterPath="$PROJECT_DIR$/.dart_tool/package_config_subset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/screens/settings_screen.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/chat/modular/features/settings/presentation/screens/settings_screen.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.lock" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/flutter_project.iml" beforeDir="false" afterPath="$PROJECT_DIR$/flutter_project.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +32,7 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/clean_architecture" />
+        <entry key="$PROJECT_DIR$" value="feature/network" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -40,6 +41,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2oQJA6iVvAdCgvkIQq9vC37cHeR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -51,37 +55,40 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Flutter.main.dart.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "webview",
+    "git-widget-placeholder": "feature/splash__screen",
     "io.flutter.reload.alreadyRun": "true",
-    "last_opened_file_path": "/Users/user/StudioProjects/flutter_project/lib/chat/modular/features/settings",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/user/StudioProjects/flutter_project",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "terminal",
+    "settings.editor.selected.configurable": "flutter.settings",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/lib/chat/modular/features/settings" />
       <recent name="$PROJECT_DIR$/lib/chat/modular/features/calls" />
       <recent name="$PROJECT_DIR$/lib/chat/modular/features/profile" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/data/models" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/data" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib/chat/modular/features/splash" />
       <recent name="$PROJECT_DIR$/lib/chat/modular" />
       <recent name="$PROJECT_DIR$/lib/chat/modular/features" />
       <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat" />
       <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/data/repository" />
-      <recent name="$PROJECT_DIR$/lib/chat/modular/features/chat/presentation/state" />
     </key>
   </component>
   <component name="RunManager">
@@ -315,7 +322,31 @@
       <option name="project" value="LOCAL" />
       <updated>1732210065048</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Splash screen.">
+      <option name="closed" value="true" />
+      <created>1733922427357</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1733922427357</updated>
+    </task>
+    <task id="LOCAL-00029" summary="Splash screen.">
+      <option name="closed" value="true" />
+      <created>1733922681642</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1733922681642</updated>
+    </task>
+    <task id="LOCAL-00030" summary="Splash screen.">
+      <option name="closed" value="true" />
+      <created>1733929029821</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1733929029821</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -336,6 +367,7 @@
     <MESSAGE value="Themes." />
     <MESSAGE value="Clean architecture." />
     <MESSAGE value="Refactoring." />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactoring." />
+    <MESSAGE value="Splash screen." />
+    <option name="LAST_COMMIT_MESSAGE" value="Splash screen." />
   </component>
 </project>
