@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../theme/custom_theme.dart';
-import '../settings/presentation/state/cubits/app_theme_cubit.dart';
 import 'widgets/checkbox.dart';
 
 class ProfileScreen extends StatelessWidget {
@@ -9,21 +6,15 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final state = context.watch<AppThemeCubit>().state;
-    return MaterialApp(
-      themeMode: state.isDark == true ? ThemeMode.dark : ThemeMode.light,
-      darkTheme: CustomTheme.darkTheme,
-      theme: CustomTheme.lightTheme,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Profile',
-            style: TextStyle(fontWeight: FontWeight.bold),
-          ),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          'Profile',
+          style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        body: //const ListDropdown(),
-            const CheckBoxScreen(),
       ),
+      body: //const ListDropdown(),
+          const CheckBoxScreen(),
     );
   }
 }
