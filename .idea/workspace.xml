@@ -36,7 +36,6 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -62,7 +61,6 @@
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
-    "com.google.services.firebase.aqiPopupShown": "true",
     "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "feature/splash__screen",
     "io.flutter.reload.alreadyRun": "true",
@@ -72,6 +70,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "flutter.settings",
+    "last_opened_file_path": "/Users/user/StudioProjects/flutter_project/lib/chat/modular/features/chat/presentation/state/cubits",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
@@ -100,7 +99,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="34ac4c8e-69e7-4a8e-b1d7-f6f313ae66f6" name="Changes" comment="" />
+      <changelist id="beaf55c7-ba98-4c22-b81a-8c3200278674" name="Changes" comment="JSON parsing." />
       <created>1730795729214</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -368,6 +367,8 @@
     <MESSAGE value="Clean architecture." />
     <MESSAGE value="Refactoring." />
     <MESSAGE value="Splash screen." />
-    <option name="LAST_COMMIT_MESSAGE" value="Splash screen." />
+    <MESSAGE value="Theme changing." />
+    <MESSAGE value="JSON parsing." />
+    <option name="LAST_COMMIT_MESSAGE" value="JSON parsing." />
   </component>
 </project>

@@ -38,7 +38,7 @@ class _AnimatedAvatarState extends State<AnimatedAvatar>
       scale: Tween(begin: 0.5, end: 1.0).animate(_controller),
       child: CircleAvatar(
         radius: 20,
-        backgroundImage: AssetImage(widget.imageUrl),
+        backgroundImage: NetworkImage(widget.imageUrl),
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../../../utils/string_extensions.dart';
 import '../../../domain/models/chat_data_list.dart';
 import 'avatar_icon.dart';
 
@@ -33,7 +34,7 @@ class _AvatarIconStackState extends State<AvatarIconStack> {
                 return Padding(
                   padding: EdgeInsets.only(right: index.toDouble() * offset),
                   child:
-                      AvatarIcon(iconLink: widget.chatDataList[index].linkUrl),
+                      AvatarIcon(iconLink: widget.chatDataList[index].linkUrl.image ?? empty()),
                 );
               },
             ),

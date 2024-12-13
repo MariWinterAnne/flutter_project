@@ -1,8 +1,10 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:html/parser.dart';
+import '../../../../../theme/colors.dart';
 import '../../../../../utils/string_extensions.dart';
 import '../../../domain/models/chat_data_list.dart';
 import '../animated_avatar.dart';
+import '../image_gallery.dart';
 
 class CardView extends StatefulWidget {
   final ChatDataList element;
@@ -21,17 +23,17 @@ class _CardViewState extends State<CardView> {
   Widget build(BuildContext context) {
     return Card(
       child: Container(
-        padding: const EdgeInsets.all(8),
-        width: 300,
+        padding: const EdgeInsets.all(16),
+        width: 350,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AnimatedAvatar(imageUrl: widget.element.linkUrl),
+            AnimatedAvatar(imageUrl: widget.element.linkUrl.image ?? empty()),
             Flexible(
               child: Container(
                 margin: const EdgeInsets.only(left: 8),
-                width: 250,
+                width: 300,
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -41,34 +43,86 @@ class _CardViewState extends State<CardView> {
                     ),
                     if (widget.element.cardImageLink != null &&
                         widget.element.cardImageLink?.isNotEmpty == true)
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: CachedNetworkImage(
-                          imageUrl: widget.element.cardImageLink ?? empty(),
-                          progressIndicatorBuilder:
-                              (context, url, downloadProgress) =>
-                                  CircularProgressIndicator(
-                                      value: downloadProgress.progress),
-                          errorWidget: (context, url, error) =>
-                              const Icon(Icons.error),
-                        ),
+                      ImageGallery(
+                        imagesList: widget.element.cardImageLink ?? [],
                       ),
+                    Row(
+                      mainAxisAlignment: widget.element.cardImageLink != null &&
+                              widget.element.cardImageLink?.isNotEmpty == true
+                          ? MainAxisAlignment.end
+                          : MainAxisAlignment.spaceEvenly,
+                      children: [
+                        if (widget.element.subtitle.isNotEmpty)
+                          Flexible(
+                            flex: 4,
+                            child: Container(
+                              margin: const EdgeInsets.only(top: 8),
+                              child: Text(
+                                parse(widget.element.subtitle)
+                                        .documentElement
+                                        ?.text ??
+                                    empty(),
+                                style: Theme.of(context).textTheme.bodySmall,
+                              ),
+                            ),
+                          ),
+                        if (widget.element.rating != null &&
+                            widget.element.rating != 0)
+                          Flexible(
+                            flex: 1,
+                            child: Stack(
+                              alignment: Alignment.center,
+                              children: [
+                                Icon(
+                                  Icons.star,
+                                  size: 50,
+                                  color: AppColors.elementsColor,
+                                ),
+                                Text(
+                                  widget.element.rating.toString(),
+                                  style: TextStyle(
+                                    fontSize: 10,
+                                    color: AppColors.whiteColor,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                      ],
+                    ),
                     Container(
                       margin: const EdgeInsets.only(top: 8),
                       child: Text(
-                        widget.element.subtitle,
+                        parse(widget.element.text).documentElement?.text ??
+                            empty(),
                         style: Theme.of(context).textTheme.bodySmall,
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
                       ),
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 8),
                       child: Text(
-                        widget.element.text,
+                        'В ролях: ${widget.element.stars}',
                         style: Theme.of(context).textTheme.bodySmall,
                       ),
-                    )
+                    ),
+                    if (widget.element.awards != null &&
+                        widget.element.awards?.isNotEmpty == true)
+                      Container(
+                        margin: const EdgeInsets.only(top: 8),
+                        child: Text(
+                          widget.element.awards ?? empty(),
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                      ),
+                    if (widget.element.language != null &&
+                        widget.element.language?.isNotEmpty == true)
+                      Container(
+                        margin: const EdgeInsets.only(top: 8),
+                        child: Text(
+                          'Язык оригинала: ${widget.element.language}',
+                          style: Theme.of(context).textTheme.bodySmall,
+                        ),
+                      ),
                   ],
                 ),
               ),

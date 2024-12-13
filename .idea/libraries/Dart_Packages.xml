@@ -387,6 +387,13 @@
             </list>
           </value>
         </entry>
+        <entry key="html">
+          <value>
+            <list>
+              <option value="$USER_HOME$/.pub-cache/hosted/pub.dev/html-0.15.5/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="http">
           <value>
             <list>
