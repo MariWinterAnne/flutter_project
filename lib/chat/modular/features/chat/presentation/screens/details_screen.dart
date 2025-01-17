@@ -1,8 +1,11 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
+import 'package:html/parser.dart';
 import '../../../../theme/colors.dart';
 import '../../../../theme/custom_theme.dart';
+import '../../../../utils/string_extensions.dart';
 import '../../../settings/presentation/state/cubits/app_theme_cubit.dart';
+import '../state/chat_screen_state.dart';
 import '../state/cubits/chat_details_cubit.dart';
 import '../state/details_screen_state.dart';
 import '../widgets/animated_back_icon.dart';
@@ -33,23 +36,31 @@ class DetailsScreen extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 16,
-                    backgroundImage: AssetImage(state.currentChat.linkUrl),
+                    backgroundImage: NetworkImage(
+                      state.currentChat.linkUrl.image ?? empty(),
+                    ),
                   ),
                   const SizedBox(width: 8),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(state.currentChat.title),
-                      Text(
-                        state.currentChat.subtitle,
-                        style: Theme.of(context).textTheme.bodySmall?.copyWith(
-                              color: AppColors.greyColor,
-                            ),
-                        maxLines: 2,
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ],
+                  Flexible(
+                    fit: FlexFit.tight,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(state.currentChat.title),
+                        Text(
+                          parse(state.currentChat.subtitle)
+                                  .documentElement
+                                  ?.text ??
+                              empty(),
+                          style:
+                              Theme.of(context).textTheme.bodySmall?.copyWith(
+                                    color: AppColors.greyColor,
+                                  ),
+                          overflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               );
@@ -76,10 +87,23 @@ class DetailsScreen extends StatelessWidget {
         ),
         body: BlocBuilder<ChatDetailsCubit, DetailsScreenState>(
           builder: (context, state) {
-            return SingleChildScrollView(
-              padding: const EdgeInsets.only(left: 8),
-              child: CardView(element: state.currentChat),
-            );
+            switch (state.loading) {
+              case ContentState.loading:
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              case ContentState.success:
+                return SingleChildScrollView(
+                  padding: const EdgeInsets.only(left: 8),
+                  scrollDirection: Axis.vertical,
+                  physics: const BouncingScrollPhysics(),
+                  child: CardView(element: state.currentChat),
+                );
+              case ContentState.error:
+                return const Center(
+                  child: Text('Произошла ошибка при загрузке данных.'),
+                );
+            }
           },
         ),
         bottomNavigationBar: SizedBox(
